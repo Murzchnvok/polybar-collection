@@ -54,7 +54,7 @@ If you choose the second option, it will be easier to keep updated and you could
 * [pomodoro app](https://github.com/Splode/pomotroid)
 * [cli task manager](https://github.com/klaussinani/taskbook)
 
-*Quality is better than quantity!*
+*Quality is more important then quantity*
 
 ## Material
 
