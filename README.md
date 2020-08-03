@@ -29,7 +29,7 @@ Also you'll need to download and install these fonts from [nerd fonts](https://w
 * JetBrainsMono
 * Sauce Code Pro
 
-You could to copy or move a config folder to *~/.config/* and blablabla doing this:
+You could copy or move a config folder to *~/.config/* doing this:
 
 ```bash
 cp -r polybar-collections/material ~/.config/polybar
