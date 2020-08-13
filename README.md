@@ -49,8 +49,6 @@ If you choose the second option, it will be easier to keep updated and you could
 
 * [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
 * [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
-* [Bind Daily (to get bing daily wallpapers)](https://github.com/Murzchnvok/bing-daily)
-* [Simple Conky theme](https://github.com/Murzchnvok/simple-conky)
 * [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
 * [Taskbook (task and notes command line)](https://github.com/klaussinani/taskbook)
 
