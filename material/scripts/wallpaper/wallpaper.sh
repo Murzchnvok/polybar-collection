@@ -18,12 +18,12 @@ morning=6
 noon=12
 night=18
 
-wallPath=/home/$USER/Pictures/Wallpapers
-gifPath=/home/$USER/Pictures/Wallpapers/gifs-frames
+wallPath=$HOME/Pictures/Wallpapers
+gifPath=$HOME/Pictures/Wallpapers/gifs-frames
 morningWall=$wallPath/taehoon-kang-16.jpg
 noonWall=$wallPath/rain-house-tree.jpg
 nightWall=$wallPath/girl-under-the-umbrella.jpg
-bingWall=/home/$USER/.bing-daily/bing-daily.jpg
+bingWall=$HOME/.bing-daily/bing-daily.jpg
 
 preset() {
   if [ $time -ge $night -o $time -lt $morning ]; then
@@ -61,7 +61,7 @@ randomgif() {
 }
 
 bingdaily() {
-  python3 /home/$USER/Projects/bing-daily/bing-daily.py
+  python3 /home/$USER/Projects/fun/bing-daily/bing-daily.py
   feh --bg-fill $bingWall
 }
 
