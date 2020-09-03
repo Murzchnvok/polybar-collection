@@ -8,13 +8,21 @@ Things you need to install first.
 
 ### Prerequisites
 
-You have to install Polybar and FontAwesome. I'm on Fedora so it's really simple:
+You need to install Polybar and FontAwesome:
+
+Debian
+
+```bash
+sudo apt install polybar fonts-font-awesome
+```
+
+Fedora
 
 ```bash
 sudo dnf install polybar fontawesome-fonts
 ```
 
-I recommend you to take a look at [polybar repo](https://github.com/polybar/polybar):
+If you're having trouble I highly recommend you to take a look at [polybar repo](https://github.com/polybar/polybar):
 
 ### Installing
 
@@ -62,4 +70,12 @@ If you choose the second option, it will be easier to keep updated and you could
 
 ![some apps](screenshots/material/some-apps.png)
 
-I'll add some more in time!
+## Nord
+
+![desktop](screenshots/nord/desktop.png)
+
+![rofi](screenshots/nord/rofi.png)
+
+![pomotroid](screenshots/nord/pomotroid.png)
+
+![thunar](screenshots/nord/thunar.png)
