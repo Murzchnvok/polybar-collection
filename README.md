@@ -77,5 +77,3 @@ If you choose the second option, it will be easier to keep updated and you could
 ![rofi](screenshots/nord/rofi.png)
 
 ![pomotroid](screenshots/nord/pomotroid.png)
-
-![thunar](screenshots/nord/thunar.png)
