@@ -41,7 +41,7 @@ def openweather(city_name, units="", api_key=OPENWEATHER_API_KEY):
         else:
             unit = " K"
 
-        print(f"{temp:.1f}{unit}")
+        print(f"{temp:.0f}{unit}")
 
     else:
         print(f"E: {request.getcode()}")
