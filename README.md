@@ -70,6 +70,14 @@ If you choose the second option, it will be easier to keep updated and you could
 
 ![some apps](screenshots/material/some-apps.png)
 
+## Neon
+
+![desktop](screenshots/neon/desktop.png)
+
+![rofi](screenshots/neon/rofi.png)
+
+![pomotroid](screenshots/neon/pomotroid.png)
+
 ## Nord
 
 ![desktop](screenshots/nord/desktop.png)
