@@ -43,7 +43,7 @@ You could copy or move a config folder to *~/.config/* doing this:
 cp -r polybar-collection/material ~/.config/polybar
 ```
 
-but what I recommend is to use the launch.sh script to launch the config file you want from the polybar-collections folder.
+but what I recommend is to use the launch.sh script to launch the config file you want from the polybar-collection folder.
 
 If you're using bspwm you need to add something like this to your bspwmrc:
 
@@ -57,7 +57,7 @@ If you choose the second option, it will be easier to keep updated and you could
 $HOME/Projects/fun
 ```
 
-If you want to create and download the polybar-collection:
+To create the directory and download the polybar-collection:
 
 ```bash
 mkdir -p $HOME/Projects/fun && cd $HOME/Projects/fun && git clone https://github.com/Murzchnvok/polybar-collection.git
