@@ -48,10 +48,20 @@ but what I recommend is to use the launch.sh script to launch the config file yo
 If you're using bspwm you need to add something like this to your bspwmrc:
 
 ```bash
-$HOME/polybar-collection/launch.sh
+$HOME/Projects/fun/polybar-collection/launch.sh
 ```
 
-If you choose the second option, it will be easier to keep updated and you could always change the theme by just changing the config folder!
+If you choose the second option, it will be easier to keep updated and you could always change the theme by just changing the config folder. But for that to work you'll need to put the polybar-collections folder in this directory:
+
+```bash
+$HOME/Projects/fun
+```
+
+If you want to create and download the polybar-collection:
+
+```bash
+mkdir -p $HOME/Projects/fun && cd $HOME/Projects/fun && git clone https://github.com/Murzchnvok/polybar-collection.git
+```
 
 ## Something you might be interested
 
