@@ -51,7 +51,7 @@ If you're using bspwm you need to add something like this to your bspwmrc:
 $HOME/Projects/fun/polybar-collection/launch.sh
 ```
 
-If you choose the second option, it will be easier to keep updated and you could always change the theme by just changing the config folder. But for that to work you'll need to put the polybar-collections folder in this directory:
+If you choose the second option, it will be easier to keep updated and you could always change the theme by just changing the config folder. But for that to work you'll need to put the polybar-collection folder in this directory:
 
 ```bash
 $HOME/Projects/fun
