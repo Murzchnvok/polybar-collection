@@ -40,7 +40,7 @@ Also you'll need to download and install these fonts from [nerd fonts](https://w
 You could copy or move a config folder to *~/.config/* doing this:
 
 ```bash
-cp -r polybar-collections/material ~/.config/polybar
+cp -r polybar-collection/material ~/.config/polybar
 ```
 
 but what I recommend is to use the launch.sh script to launch the config file you want from the polybar-collections folder.
