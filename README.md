@@ -16,13 +16,31 @@ Debian
 sudo apt install polybar fonts-font-awesome
 ```
 
+Ubuntu
+
+```bash
+sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev fonts-font-awesome
+
+git clone --recursive https://github.com/polybar/polybar && cd polybar && mkdir build && cd build && cmake .. && make -j$(nproc) && sudo make install
+```
+
 Fedora
 
 ```bash
 sudo dnf install polybar fontawesome-fonts
 ```
 
-If you're having trouble I highly recommend you to take a look at [polybar repo](https://github.com/polybar/polybar):
+If you're having trouble I highly recommend you to take a look at [polybar repo](https://github.com/polybar/polybar).
+
+Also you need to download and install this font from [nerd fonts](https://www.nerdfonts.com/font-downloads):
+
+* JetBrainsMono
+
+To install just download the font, move/copy to the folder ~/.fonts and run in the terminal:
+
+```bash
+fc-cache -fv
+```
 
 ### Installing
 
@@ -31,11 +49,6 @@ First you need to download or clone the repo:
 ```bash
 git clone https://github.com/Murzchnvok/polybar-collection
 ```
-
-Also you'll need to download and install these fonts from [nerd fonts](https://www.nerdfonts.com/font-downloads):
-
-* JetBrainsMono
-* Sauce Code Pro
 
 You could copy or move a config folder to *~/.config/* doing this:
 
@@ -72,6 +85,14 @@ mkdir -p $HOME/Projects/fun && cd $HOME/Projects/fun && git clone https://github
 
 *Quality is more important then quantity!*
 
+## Dracula
+
+![desktop](screenshots/dracula/desktop.png)
+
+![rofi](screenshots/dracula/rofi.png)
+
+![some apps](screenshots/dracula/pomotroid.png)
+
 ## Material
 
 ![desktop](screenshots/material/desktop.png)
@@ -86,7 +107,7 @@ mkdir -p $HOME/Projects/fun && cd $HOME/Projects/fun && git clone https://github
 
 ![rofi](screenshots/neon/rofi.png)
 
-![pomotroid](screenshots/neon/pomotroid.png)
+![pomotroid](screenshots/neon/some-apps.png)
 
 ## Nord
 
