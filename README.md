@@ -1,6 +1,6 @@
 # Polybar Collection
 
-My personal collection.
+My personal collection. (need some update, don't download right now)
 
 ## Getting Started
 
