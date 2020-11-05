@@ -12,6 +12,11 @@ OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
 def getip():
+    """
+    Get the ip address.
+
+    Args:
+    """
     request = urllib.request.urlopen("https://api.ipify.org?format=json")
     if request.getcode() == 200:
         data = json.loads(request.read())
@@ -19,6 +24,11 @@ def getip():
 
 
 def getcity():
+    """
+    Get city details
+
+    Args:
+    """
     request = urllib.request.urlopen("http://ip-api.com/json/" + getip())
     if request.getcode() == 200:
         data = json.loads(request.read())
@@ -26,6 +36,14 @@ def getcity():
 
 
 def openweather(city_name, units, api_key):
+    """
+    Opens weather
+
+    Args:
+        city_name: (str): write your description
+        units: (str): write your description
+        api_key: (str): write your description
+    """
     try:
         request = urllib.request.urlopen(
             f"{OPENWEATHER_URL}?q={city_name.replace(' ', '+')}&units={units}&appid={api_key}"
@@ -78,6 +96,13 @@ def openweather(city_name, units, api_key):
 
 
 def weather_output(verbose, color):
+    """
+    Prints an weather.
+
+    Args:
+        verbose: (bool): write your description
+        color: (str): write your description
+    """
     try:
         (
             _id,
