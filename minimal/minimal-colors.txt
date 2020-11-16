@@ -1,0 +1,20 @@
+bg #151515
+fg #ffffff
+
+terminal colors
+1 #151515
+2 #ff1744
+3 #00e676
+4 #ffea00
+5 #2979ff
+6 #d500f9
+7 #00e5ff
+8 #ffffff
+1 #212121
+2 #ff1744
+3 #00e676
+4 #ffea00
+5 #2979ff
+6 #d500f9
+7 #00e5ff
+8 #f5f5f5

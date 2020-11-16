@@ -140,7 +140,8 @@ Some examples:
 ::> 25ºC
 """
 parser = argparse.ArgumentParser(
-    usage=USAGE_MESSAGE, description="Display information about the weather.",
+    usage=USAGE_MESSAGE,
+    description="Display information about the weather.",
 )
 parser.add_argument(
     "-c",
@@ -160,13 +161,25 @@ parser.add_argument(
     help="unit of temperature (default: kelvin)",
 )
 parser.add_argument(
-    "-a", metavar="API_KEY", dest="api_key", nargs=1, help="API Key",
+    "-a",
+    metavar="API_KEY",
+    dest="api_key",
+    nargs=1,
+    help="API Key",
 )
 parser.add_argument(
-    "-v", "--verbose", action="store_true", dest="verbose", help="verbose mode",
+    "-v",
+    "--verbose",
+    action="store_true",
+    dest="verbose",
+    help="verbose mode",
 )
 parser.add_argument(
-    "-C", "--color", action="store_true", dest="color", help="colorful output",
+    "-C",
+    "--color",
+    action="store_true",
+    dest="color",
+    help="colorful output",
 )
 
 args = parser.parse_args()
