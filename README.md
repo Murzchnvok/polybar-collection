@@ -2,7 +2,7 @@
 
 My personal collection.
 
-*If you find any error or you think I need to add something to this readme please send a message to me on [reddit](https://www.reddit.com/user/murzchnvok)*
+_If you find any error or you think I need to add something to this readme please send a message to me on [reddit](https://www.reddit.com/user/murzchnvok)_
 
 ## Getting Started
 
@@ -36,11 +36,12 @@ $HOME
 
 If you're having trouble I highly recommend you to take a look at [polybar repo](https://github.com/polybar/polybar).
 
-Also you need to download and install this font from [nerd fonts](https://www.nerdfonts.com/font-downloads):
+Also you need to download and install these fonts from [nerd fonts](https://www.nerdfonts.com/font-downloads):
 
-* JetBrainsMono
+- JetBrainsMono
+- Iosevka
 
-To install this font, copy/move to the folder *~/.fonts* and run in the terminal:
+To install this font, copy/move to the folder _~/.fonts_ and run in the terminal:
 
 ```bash
 $HOME
@@ -49,14 +50,14 @@ $HOME
 
 ### Installing
 
-First you need to clone the repo in the $HOME directory:
+First you need to clone the repo in the \$HOME directory:
 
 ```bash
 $HOME
 -> git clone https://github.com/Murzchnvok/polybar-collection
 ```
 
-or clone to other directory and create a symlink of the folder in the $HOME directory:
+or clone to other directory and create a symlink of the folder in the \$HOME directory:
 
 ```bash
 $HOME/Projects
@@ -66,14 +67,14 @@ $HOME
 -> ln -s $HOME/Projects/polybar-collection $HOME/polybar-collection
 ```
 
-Other option is to copy a config folder to *$HOME/.config/polybar/* directory:
+Other option is to copy a config folder to _\$HOME/.config/polybar/_ directory:
 
 ```bash
 $HOME
 -> cp -r material $HOME/.config/polybar
 ```
 
-or create a symlink of the folder in the *$HOME/.config/polybar/* directory:
+or create a symlink of the folder in the _\$HOME/.config/polybar/_ directory:
 
 ```bash
 $HOME
@@ -95,12 +96,12 @@ $HOME
 
 ## You might be interested
 
-* [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
-* [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
-* [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
-* [Taskbook (task and notes command line)](https://github.com/klaussinani/taskbook)
+- [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
+- [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
+- [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
+- [Taskbook (task and notes command line)](https://github.com/klaussinani/taskbook)
 
-*Quality is more important then quantity!*
+_Quality is more important then quantity!_
 
 ## Dracula
 
@@ -117,6 +118,14 @@ $HOME
 ![rofi](screenshots/material/rofi.png)
 
 ![some apps](screenshots/material/some-apps.png)
+
+## Minimal
+
+![desktop](screenshots/minimal/desktop.png)
+
+![rofi](screenshots/minimal/rofi.png)
+
+![some apps](screenshots/minimal/pomotroid.png)
 
 ## Neon
 
