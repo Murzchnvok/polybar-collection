@@ -1,8 +1,14 @@
 import argparse
 import json
+import sys
 import urllib.request
 
-from colored import attr, bg, fg
+try:
+    from colored import attr, fg
+except:
+    print("You need to install 'colored'")
+    print("Run: pip3 install colored --user")
+    sys.exit(0)
 
 # This API KEY is for my personal usage.
 # Please get your own API KEY here https://openweathermap.org/api,
