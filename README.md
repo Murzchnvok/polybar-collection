@@ -10,31 +10,21 @@ _If you find any error or you think I need to add something to this readme pleas
 
 You need to install Polybar and FontAwesome:
 
-Debian
+[Compiling Polybar](https://github.com/polybar/polybar/wiki/Compiling)
+
+Debian/Ubuntu
 
 ```bash
 $HOME
--> sudo apt install polybar fonts-font-awesome
-```
-
-Ubuntu
-
-```bash
-$HOME
--> sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev fonts-font-awesome
-
-$HOME
--> git clone --recursive https://github.com/polybar/polybar && cd polybar && mkdir build && cd build && cmake .. && make -j$(nproc) && sudo make install
+-> sudo apt install fonts-font-awesome
 ```
 
 Fedora
 
 ```bash
 $HOME
--> sudo dnf install polybar fontawesome-fonts
+-> sudo dnf install fontawesome-fonts
 ```
-
-If you're having trouble I highly recommend you to take a look at [polybar repo](https://github.com/polybar/polybar).
 
 Also you need to download and install these fonts from [nerd fonts](https://www.nerdfonts.com/font-downloads):
 
