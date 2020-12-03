@@ -65,7 +65,7 @@ def check_unit(unit):
 def openweather(city_name, unit, api_key):
     try:
         request = urllib.request.urlopen(
-            f"{OPENWEATHER_URL}?q={city_name.replace('', '+')}&units={unit}&appid={api_key}"
+            f"{OPENWEATHER_URL}?q={city_name.replace(' ', '+')}&units={unit}&appid={api_key}"
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
