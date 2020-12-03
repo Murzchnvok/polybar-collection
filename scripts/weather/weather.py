@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import sys
 import urllib.request
 
@@ -12,12 +13,18 @@ except:
 
 # This API KEY is for my personal usage.
 # Please get your own API KEY here https://openweathermap.org/api,
-# because the number of request per day is limited.
-OPENWEATHER_API_KEY = "970606528befaa317698cc75083db8b2"
+# and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
+API_KEY = "970606528befaa317698cc75083db8b2"
+OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", API_KEY)
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
 def getip():
+    """Return your public ip address.
+
+    Returns:
+        data['ip'] (str): Return your public ip address
+    """
     request = urllib.request.urlopen("https://api.ipify.org?format=json")
     if request.getcode() == 200:
         data = json.loads(request.read())
@@ -25,16 +32,40 @@ def getip():
 
 
 def getcity():
+    """Return the name of the city you're in based on your external ip address.
+
+    Returns:
+        data['city'] (str): Return the name of your city
+    """
     request = urllib.request.urlopen("http://ip-api.com/json/" + getip())
     if request.getcode() == 200:
         data = json.loads(request.read())
         return data["city"]
 
 
-def openweather(city_name, units, api_key):
+def check_unit(unit):
+    """Return the abbreviation name for a unit.
+
+    Args:
+        unit (str): Name of the unit (imperial or metric)
+
+    Returns:
+        unit (str): Return the abbreviation name for the unit
+    """
+    if unit == "metric":
+        unit = "ºC"
+    elif unit == "imperial":
+        unit = "ºF"
+    else:
+        unit = " K"
+
+    return unit
+
+
+def openweather(city_name, unit, api_key):
     try:
         request = urllib.request.urlopen(
-            f"{OPENWEATHER_URL}?q={city_name.replace(' ', '+')}&units={units}&appid={api_key}"
+            f"{OPENWEATHER_URL}?q={city_name.replace('', '+')}&units={unit}&appid={api_key}"
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
@@ -53,12 +84,7 @@ def openweather(city_name, units, api_key):
             feels_like = data["main"]["feels_like"]
             description = data["weather"][0]["description"]
 
-            if units == "metric":
-                unit = "ºC"
-            elif units == "imperial":
-                unit = "ºF"
-            else:
-                unit = " K"
+            unit = check_unit(unit)
 
             return (
                 _id,
@@ -79,7 +105,7 @@ def openweather(city_name, units, api_key):
         else:
             print(f"E: {request.getcode()}")
 
-    except urllib.error.HTTPError as e:
+    except Exception as e:
         print(e)
 
 
@@ -119,7 +145,7 @@ def weather_output(verbose, color):
                 print(f"{temp:.0f}{unit}, {description}")
             else:
                 print(f"{temp:.0f}{unit}")
-    except TypeError as e:
+    except Exception as e:
         print("E: something went wrong")
         print(e)
 
@@ -155,7 +181,7 @@ parser.add_argument(
     dest="city",
     type=str,
     nargs=1,
-    help="city name (default: try to get your city using your ip address)",
+    help="city name (default: try to get your city using your public ip address)",
 )
 parser.add_argument(
     "-u",
