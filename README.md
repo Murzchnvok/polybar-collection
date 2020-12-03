@@ -2,7 +2,7 @@
 
 My personal collection. (I'll update soon to the new version of polybar)
 
-_If you find any error or you think I need to add something to this readme please send a message to me on [reddit](https://www.reddit.com/user/murzchnvok)_
+_If you find any error or you have an idea of a theme or something, send a message to me on [reddit](https://www.reddit.com/user/murzchnvok) or on Discord_ **Murzchnvok#1166**
 
 ## Getting Started
 

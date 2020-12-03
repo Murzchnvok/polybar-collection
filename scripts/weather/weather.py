@@ -4,6 +4,9 @@ import os
 import sys
 import urllib.request
 
+from check_unit import check_unit
+from getcity import getcity
+
 try:
     from colored import attr, fg
 except:
@@ -17,49 +20,6 @@ except:
 API_KEY = "970606528befaa317698cc75083db8b2"
 OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY", API_KEY)
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
-
-
-def getip():
-    """Return your public ip address.
-
-    Returns:
-        data['ip'] (str): Return your public ip address
-    """
-    request = urllib.request.urlopen("https://api.ipify.org?format=json")
-    if request.getcode() == 200:
-        data = json.loads(request.read())
-        return data["ip"]
-
-
-def getcity():
-    """Return the name of the city you're in based on your external ip address.
-
-    Returns:
-        data['city'] (str): Return the name of your city
-    """
-    request = urllib.request.urlopen("http://ip-api.com/json/" + getip())
-    if request.getcode() == 200:
-        data = json.loads(request.read())
-        return data["city"]
-
-
-def check_unit(unit):
-    """Return the abbreviation name for a unit.
-
-    Args:
-        unit (str): Name of the unit (imperial or metric)
-
-    Returns:
-        unit (str): Return the abbreviation name for the unit
-    """
-    if unit == "metric":
-        unit = "ºC"
-    elif unit == "imperial":
-        unit = "ºF"
-    else:
-        unit = " K"
-
-    return unit
 
 
 def openweather(city_name, unit, api_key):
@@ -214,6 +174,8 @@ parser.add_argument(
     help="colorful output",
 )
 
-args = parser.parse_args()
 
-weather_output(args.verbose, args.color)
+if __name__ == "__main__":
+    args = parser.parse_args()
+
+    weather_output(args.verbose, args.color)
