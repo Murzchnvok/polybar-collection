@@ -6,13 +6,12 @@ from utils.themes import *
 
 
 weather_conditions = {
-    "Clear": "",
-    "Clouds": "",
-    "Drizzle": "",
-    "Fog": "",
-    "Rain": "",
-    "Snow": "",
-    "Thunderstorm": "",
+    "Clear": "sun",
+    "Clouds": "cloud",
+    "Drizzle": "cloud-drizzle",
+    "Rain": "cloud-rain",
+    "Snow": "cloud-snow",
+    "Thunderstorm": "cloud-lightning",
 }
 
 
@@ -22,6 +21,7 @@ def weather_gui():
 
         city_name = weather_info.get("city_name").title()
         country = weather_info.get("country")
+        main_desc = weather_info.get("main_desc").title()
         description = weather_info.get("description").title()
         temp = weather_info.get("temp")
         temp_min = weather_info.get("temp_min")
@@ -31,10 +31,11 @@ def weather_gui():
         font_ubuntu = "UbuntuMono Nerd Font"
 
         sg.theme("MonoWhite")
-        weather_icon = "weather-icons/cloud-rain.png"
+        icon_name = weather_conditions.get(main_desc)
+        weather_icon = f"weather-icons/{icon_name}.png"
         if args.dark_theme:
             sg.theme("MonoDark")
-            weather_icon = "weather-icons/w-cloud-rain.png"
+            weather_icon = f"weather-icons/w-{icon_name}.png"
 
         layout = [
             [
