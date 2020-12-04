@@ -7,7 +7,6 @@ from utils.getcity import getcity
 from utils.iso3 import iso3
 from utils.parser import args
 
-
 # This API KEY is for my personal usage.
 # Please get your own API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
