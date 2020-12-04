@@ -16,15 +16,16 @@ OPENWEATHER_API_KEY = (
     args.api_key[0] if args.api_key else os.environ.get("OPENWEATHER_API_KEY", API_KEY)
 )
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
-OPENWEATHER_UNIT = args.unit[0] if args.unit else "metric"
 
 CITY_NAME = args.city[0] if args.city else getcity()
+LANG = args.lang[0] if args.lang else "en"
+UNIT = args.unit[0] if args.unit else "metric"
 
 
-def openweather(city=CITY_NAME, unit=OPENWEATHER_UNIT, api_key=OPENWEATHER_API_KEY):
+def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KEY):
     try:
         request = urllib.request.urlopen(
-            f"{OPENWEATHER_URL}?q={city.replace(' ', '+')}&units={unit}&appid={api_key}"
+            f"{OPENWEATHER_URL}?q={city.replace(' ', '+')}&lang={lang}&units={unit}&appid={api_key}"
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
