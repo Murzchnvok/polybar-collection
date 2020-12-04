@@ -28,7 +28,6 @@ def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KE
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
-            print(data)
 
             _id = data["id"]
             name = data["name"]
