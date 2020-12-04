@@ -59,5 +59,12 @@ parser.add_argument(
     dest="gui",
     help="graphical interface",
 )
+parser.add_argument(
+    "-d",
+    "--dark",
+    action="store_true",
+    dest="dark_theme",
+    help="dark GUI",
+)
 
 args = parser.parse_args()
