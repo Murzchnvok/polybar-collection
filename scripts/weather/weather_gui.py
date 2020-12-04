@@ -21,8 +21,8 @@ def weather_gui():
 
         city_name = weather_info.get("city_name").title()
         country = weather_info.get("country")
-        main_desc = weather_info.get("main_desc").title()
         description = weather_info.get("description").title()
+        icon = weather_info.get("icon")
         temp = weather_info.get("temp")
         temp_min = weather_info.get("temp_min")
         temp_max = weather_info.get("temp_max")
@@ -31,11 +31,10 @@ def weather_gui():
         font_ubuntu = "UbuntuMono Nerd Font"
 
         sg.theme("MonoWhite")
-        icon_name = weather_conditions.get(main_desc)
-        weather_icon = f"weather-icons/{icon_name}.png"
+        # icon_name = weather_conditions.get(icon)
+        weather_icon = f"weather-icons/{icon}.png"
         if args.dark_theme:
             sg.theme("MonoDark")
-            weather_icon = f"weather-icons/w-{icon_name}.png"
 
         layout = [
             [
@@ -88,7 +87,6 @@ def weather_gui():
             auto_size_buttons=True,
             auto_size_text=True,
             finalize=True,
-            # background_color=bg_color,
             size=(300, 410),
         )
 

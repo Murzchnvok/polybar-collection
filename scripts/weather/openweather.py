@@ -28,6 +28,7 @@ def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KE
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
+            print(data)
 
             _id = data["id"]
             name = data["name"]
@@ -41,8 +42,8 @@ def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KE
             temp_max = data["main"]["temp_max"]
             humidity = data["main"]["humidity"]
             feels_like = data["main"]["feels_like"]
-            main_desc = data["weather"][0]["main"]
             description = data["weather"][0]["description"]
+            icon = data["weather"][0]["icon"]
 
             country = iso3().get(country)
             unit = check_unit(unit)
@@ -58,8 +59,8 @@ def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KE
                 "temp_min": temp_min,
                 "temp_max": temp_max,
                 "feels_like": feels_like,
-                "main_desc": main_desc,
                 "description": description,
+                "icon": icon,
                 "humidity": humidity,
                 "unit": unit,
             }
