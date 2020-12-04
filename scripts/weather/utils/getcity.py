@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-from getip import getip
+from utils.getip import getip
 
 
 def getcity():

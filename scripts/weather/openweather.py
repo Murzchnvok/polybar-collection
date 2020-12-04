@@ -1,15 +1,30 @@
 import json
+import os
 import urllib.request
 
-from check_unit import check_unit
+from utils.check_unit import check_unit
+from utils.getcity import getcity
+from utils.iso3 import iso3
+from utils.parser import args
 
+
+# This API KEY is for my personal usage.
+# Please get your own API KEY here https://openweathermap.org/api,
+# and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
+API_KEY = "970606528befaa317698cc75083db8b2"
+OPENWEATHER_API_KEY = (
+    args.api_key[0] if args.api_key else os.environ.get("OPENWEATHER_API_KEY", API_KEY)
+)
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
+OPENWEATHER_UNIT = args.unit[0] if args.unit else "metric"
+
+CITY_NAME = args.city[0] if args.city else getcity()
 
 
-def openweather(city_name, unit, api_key):
+def openweather(city=CITY_NAME, unit=OPENWEATHER_UNIT, api_key=OPENWEATHER_API_KEY):
     try:
         request = urllib.request.urlopen(
-            f"{OPENWEATHER_URL}?q={city_name.replace(' ', '+')}&units={unit}&appid={api_key}"
+            f"{OPENWEATHER_URL}?q={city.replace(' ', '+')}&units={unit}&appid={api_key}"
         )
         if request.getcode() == 200:
             data = json.loads(request.read())
@@ -28,6 +43,7 @@ def openweather(city_name, unit, api_key):
             feels_like = data["main"]["feels_like"]
             description = data["weather"][0]["description"]
 
+            country = iso3().get(country)
             unit = check_unit(unit)
 
             weather_info = {
