@@ -26,7 +26,7 @@ def weather_gui():
         temp = weather_info.get("temp")
         temp_min = weather_info.get("temp_min")
         temp_max = weather_info.get("temp_max")
-        unit = weather_infou.get("unit")
+        unit = weather_info.get("unit")
 
         font_ubuntu = "UbuntuMono Nerd Font"
 
