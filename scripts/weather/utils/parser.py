@@ -7,20 +7,20 @@ parser = argparse.ArgumentParser(
     description="Display information about the weather.",
 )
 parser.add_argument(
-    "-l",
-    metavar="LANG",
-    dest="lang",
-    type=str,
-    nargs=1,
-    help="language (en, es, fr, ja, pt, pt_br, ru, zh_cn)",
-)
-parser.add_argument(
     "-c",
     metavar="CITY",
     dest="city",
     type=str,
     nargs=1,
     help="city name (default: try to get your city using your public ip address)",
+)
+parser.add_argument(
+    "-l",
+    metavar="LANG",
+    dest="lang",
+    type=str,
+    nargs=1,
+    help="language (en, es, fr, ja, pt, pt_br, ru, zh_cn)",
 )
 parser.add_argument(
     "-u",
@@ -30,6 +30,14 @@ parser.add_argument(
     type=str,
     nargs=1,
     help="unit of temperature (default: kelvin)",
+)
+parser.add_argument(
+    "-t",
+    metavar="THEME",
+    dest="theme",
+    type=str,
+    nargs=1,
+    help="theme to be used (default: light)",
 )
 parser.add_argument(
     "-a",

@@ -1,33 +1,34 @@
-from PySimpleGUI import LOOK_AND_FEEL_TABLE
-
-LOOK_AND_FEEL_TABLE["MonoDark"] = {
-    "BACKGROUND": "#000000",
-    "TEXT": "#FFFFFF",
-    "INPUT": "#000000",
-    "TEXT_INPUT": "#FFFFFF",
-    "SCROLL": "#FFFFFF",
-    "BUTTON": ("#000000", "#000000"),
-    "PROGRESS": ("#FFFFFF", "#000000"),
-    "BORDER": 0,
-    "SLIDER_DEPTH": 0,
-    "PROGRESS_DEPTH": 0,
-    "ACCENT1": "#FFFFFF",
-    "ACCENT2": "#FFFFFF",
-    "ACCENT3": "#FFFFFF",
+themes = {
+    "black": {
+        "bg_color": "#000000",
+        "city_color": "#404040",
+        "temp_color": "#ffffff",
+        "desc_color": "#ffffff",
+        "min_max_color": "#404040",
+    },
+    "dracula": {
+        "bg_color": "#282a36",
+        "city_color": "#6272a4",
+        "temp_color": "#50fa7b",
+        "desc_color": "#bd93f9",
+        "min_max_color": "#6272a4",
+    },
+    "light": {
+        "bg_color": "#ffffff",
+        "city_color": "#000000",
+        "temp_color": "#000000",
+        "desc_color": "#000000",
+        "min_max_color": "#757575",
+    },
+    "nord": {
+        "bg_color": "#2E3440",
+        "city_color": "#5E81AC",
+        "temp_color": "#EBCB8B",
+        "desc_color": "#B48EAD",
+        "min_max_color": "#81A1C1",
+    },
 }
 
-LOOK_AND_FEEL_TABLE["MonoWhite"] = {
-    "BACKGROUND": "#FFFFFF",
-    "TEXT": "#000000",
-    "INPUT": "#FFFFFF",
-    "TEXT_INPUT": "#000000",
-    "SCROLL": "#000000",
-    "BUTTON": ("#FFFFFF", "#FFFFFF"),
-    "PROGRESS": ("#000000", "#FFFFFF"),
-    "BORDER": 0,
-    "SLIDER_DEPTH": 0,
-    "PROGRESS_DEPTH": 0,
-    "ACCENT1": "#000000",
-    "ACCENT2": "#000000",
-    "ACCENT3": "#000000",
-}
+
+def get_theme(theme):
+    return themes.get(theme) if theme in themes else themes.get("light")
