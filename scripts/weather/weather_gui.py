@@ -30,6 +30,7 @@ def weather_gui():
         desc_color = theme.get("desc_color")
         min_max_color = theme.get("min_max_color")
 
+        # TODO: change the icon pack based on the theme
         weather_icon = f"weather-icons/{icon}.png"
 
         layout = [
