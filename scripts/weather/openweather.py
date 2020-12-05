@@ -18,7 +18,7 @@ OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 CITY_NAME = args.city[0] if args.city else getcity()
 LANG = args.lang[0] if args.lang else "en"
-UNIT = args.unit[0] if args.unit else "metric"
+UNIT = args.unit[0] if args.unit else "standard"
 
 
 def openweather(city=CITY_NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KEY):

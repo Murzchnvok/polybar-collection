@@ -32,14 +32,6 @@ parser.add_argument(
     help="unit of temperature (default: kelvin)",
 )
 parser.add_argument(
-    "-t",
-    metavar="THEME",
-    dest="theme",
-    type=str,
-    nargs=1,
-    help="theme to be used (default: light)",
-)
-parser.add_argument(
     "-a",
     metavar="API_KEY",
     dest="api_key",
@@ -68,11 +60,12 @@ parser.add_argument(
     help="graphical interface",
 )
 parser.add_argument(
-    "-d",
-    "--dark",
-    action="store_true",
-    dest="dark_theme",
-    help="dark GUI",
+    "-t",
+    metavar="THEME",
+    dest="theme",
+    type=str,
+    nargs=1,
+    help="theme to be used (default: light)",
 )
 
 args = parser.parse_args()
