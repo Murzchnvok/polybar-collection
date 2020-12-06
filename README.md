@@ -30,6 +30,7 @@ Also you need to download and install these fonts from [nerd fonts](https://www.
 
 - JetBrainsMono
 - Iosevka
+- UbuntuMono
 
 To install this font, copy/move to the folder _~/.fonts_ and run in the terminal:
 
@@ -38,7 +39,7 @@ $HOME
 -> fc-cache -fv
 ```
 
-### Installing
+### Cloning
 
 First you need to clone the repo in the \$HOME directory:
 
@@ -71,10 +72,18 @@ $HOME
 -> ln -s $HOME/Projects/polybar-collection/nord $HOME/.config/polybar/
 ```
 
-If you're using bspwm you need to add something like this to your bspwmrc:
+### Running
+
+BSPwm
 
 ```bash
 $HOME/polybar-collection/launch.sh
+```
+
+I3wm
+
+```bash
+exec_always --no-startup-id $HOME/polybar-collection/launch.sh
 ```
 
 Remember to keep updated:
