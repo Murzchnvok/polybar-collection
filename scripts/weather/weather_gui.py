@@ -1,8 +1,15 @@
-import PySimpleGUI as sg
+import sys
 
 from openweather import openweather
 from utils.parser import args
 from utils.themes import get_theme
+
+try:
+    import PySimpleGUI as sg
+except:
+    print("Module 'PySimpleGUI' not installed.")
+    print("Run: pip3 install -r requirements.txt")
+    sys.exit(0)
 
 
 def weather_gui():
