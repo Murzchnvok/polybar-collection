@@ -9,8 +9,8 @@ NIGHT=18
 WALLPAPERS_PATH=$HOME/Pictures/Wallpapers
 GIF_PATH=$WALLPAPERS_PATH/gifs-frames
 
-DAY_WALL=$WALLPAPERS_PATH/nord-water.png
-NIGHT_WALL=$WALLPAPERS_PATH/nord-water.png
+DAY_WALL=$WALLPAPERS_PATH/taehoon-kang-16.jpg
+NIGHT_WALL=$WALLPAPERS_PATH/girl-under-the-umbrella.jpg
 
 preset() {
   if [ $TIME_NOW -ge $NIGHT -o $TIME_NOW -lt $DAY ]; then
