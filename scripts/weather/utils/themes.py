@@ -27,11 +27,18 @@ themes = {
         "desc_color": "#000000",
         "min_max_color": "#757575",
     },
+    "material": {
+        "bg_color": "#151515",
+        "city_color": "#474747",
+        "temp_color": "#ffffff",
+        "desc_color": "#ffffff",
+        "min_max_color": "#474747",
+    },
     "neon": {
         "bg_color": "#000020",
         "city_color": "#186DFF",
         "temp_color": "#03EAFF",
-        "desc_color": "#FFE900",
+        "desc_color": "#ff9100",
         "min_max_color": "#DA06FF",
     },
     "nord": {
