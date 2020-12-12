@@ -1,6 +1,6 @@
 # Polybar Collection
 
-My personal collection. (Updating, don't use any theme of this collection right now)
+My personal collection. (Updating, don't use this collection right now)
 
 _If you find any error or you have an idea of a theme or something, send a message to me on [reddit](https://www.reddit.com/user/murzchnvok) or on Discord_ **Murzchnvok#1166**
 
@@ -8,36 +8,16 @@ _If you find any error or you have an idea of a theme or something, send a messa
 
 ### Prerequisites
 
-You need to install Polybar and FontAwesome:
+You need to install Polybar, NerdFonts and MaterialIcons:
 
 [Compiling Polybar](https://github.com/polybar/polybar/wiki/Compiling)
 
-Debian/Ubuntu
-
-```bash
-$HOME
--> sudo apt install fonts-font-awesome
-```
-
-Fedora
-
-```bash
-$HOME
--> sudo dnf install fontawesome-fonts
-```
-
-Also you need to download and install these fonts from [nerd fonts](https://www.nerdfonts.com/font-downloads):
+You need to download and install these fonts from [NerdFonts](https://www.nerdfonts.com/font-downloads):
 
 - JetBrainsMono
 - Iosevka
-- UbuntuMono
 
-To install this font, copy/move to the folder _~/.fonts_ and run in the terminal:
-
-```bash
-$HOME
--> fc-cache -fv
-```
+Also you'll need to install [MaterialIcons](https://github.com/google/material-design-icons).
 
 ### Cloning
 
@@ -98,7 +78,8 @@ $HOME
 - [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
 - [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
 - [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
-- [Taskbook (task and notes command line)](https://github.com/klaussinani/taskbook)
+- [Ugly To-Do](https://github.com/Murzchnvok/ugly-todo)
+- [Ugly Weather](https://github.com/Murzchnvok/ugly-weather)
 
 _Quality is more important then quantity!_
 
