@@ -89,7 +89,7 @@ _Quality is more important then quantity!_
 
 ![rofi](screenshots/dracula/rofi.png)
 
-![some apps](screenshots/dracula/pomotroid.png)
+![some apps](screenshots/dracula/some-apps.png)
 
 ## Material
 
@@ -105,7 +105,7 @@ _Quality is more important then quantity!_
 
 ![rofi](screenshots/minimal/rofi.png)
 
-![some apps](screenshots/minimal/pomotroid.png)
+![some apps](screenshots/minimal/some-apps.png)
 
 ## Neon
 
@@ -121,4 +121,4 @@ _Quality is more important then quantity!_
 
 ![rofi](screenshots/nord/rofi.png)
 
-![pomotroid](screenshots/nord/pomotroid.png)
+![pomotroid](screenshots/nord/some-apps.png)
