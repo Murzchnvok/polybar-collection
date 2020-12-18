@@ -107,14 +107,6 @@ _Quality is more important then quantity!_
 
 ![some apps](screenshots/minimal/some-apps.png)
 
-## Neon
-
-![desktop](screenshots/neon/desktop.png)
-
-![rofi](screenshots/neon/rofi.png)
-
-![pomotroid](screenshots/neon/some-apps.png)
-
 ## Nord
 
 ![desktop](screenshots/nord/desktop.png)
