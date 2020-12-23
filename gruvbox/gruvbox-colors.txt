@@ -1,0 +1,20 @@
+bg #282a36
+fg #f8f8f2
+
+terminal colors
+1 #282a36
+2 #ff5555
+3 #50fa7b
+4 #f1fa8c
+5 #6272a4
+6 #bd93f9
+7 #8be9fd
+8 #f8f8f2
+1 #44475a
+2 #ff5555
+3 #50fa7b
+4 #f1fa8c
+5 #6272a4
+6 #bd93f9
+7 #8be9fd
+8 #f8f8f2
