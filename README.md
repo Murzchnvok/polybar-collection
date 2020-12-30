@@ -77,7 +77,6 @@ $HOME
 - [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
 - [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
 - [Ugly To-Do](https://github.com/Murzchnvok/ugly-todo)
-- [Ugly Weather](https://github.com/Murzchnvok/ugly-weather) (not ready yet)
 
 _Quality is more important then quantity!_
 
