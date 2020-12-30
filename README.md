@@ -83,6 +83,14 @@ $HOME
 
 _Quality is more important then quantity!_
 
+## Murz (my own color scheme)
+
+![desktop](screenshots/murz/desktop.png)
+
+![rofi](screenshots/murz/rofi.png)
+
+![some apps](screenshots/murz/some-apps.png)
+
 ## Dracula
 
 ![desktop](screenshots/dracula/desktop.png)
@@ -90,6 +98,14 @@ _Quality is more important then quantity!_
 ![rofi](screenshots/dracula/rofi.png)
 
 ![some apps](screenshots/dracula/some-apps.png)
+
+## Gruvbox
+
+![desktop](screenshots/gruvbox/desktop.png)
+
+![rofi](screenshots/gruvbox/rofi.png)
+
+![some apps](screenshots/gruvbox/some-apps.png)
 
 ## Material
 
