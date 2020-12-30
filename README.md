@@ -1,8 +1,6 @@
 # Polybar Collection
 
-My personal collection. (Updating, don't use this collection right now)
-
-_If you find any error or you have an idea of a theme or something, send a message to me on [reddit](https://www.reddit.com/user/murzchnvok) or on Discord_ **Murzchnvok#1166**
+My personal collection.
 
 ## Getting Started
 
