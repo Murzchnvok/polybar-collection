@@ -80,13 +80,17 @@ $HOME
 
 _Quality is more important then quantity!_
 
-## Murz (my own color scheme)
+## Murz
 
 ![desktop](screenshots/murz/desktop.png)
 
 ![rofi](screenshots/murz/rofi.png)
 
 ![some apps](screenshots/murz/some-apps.png)
+
+## Chnvok (same as Murz, but with a different style)
+
+![desktop](screenshots/chnvok/desktop.png)
 
 ## Dracula
 
