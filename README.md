@@ -1,4 +1,4 @@
-# Polybar Collection
+# Polybar Collection (updating)
 
 My personal collection. Trying to make some nice themes, and show how great [Polybar](https://github.com/polybar/polybar) is, at least for me. I'll keep updating the collection, and maybe create some custom scripts so you and I can have a better experience with this thing I'm doing. I also recommend you to check this [adi1090x Polybar Collection](https://github.com/adi1090x/polybar-themes), has some great themes, so if you don't like my collection, you can just check the other one.
 
@@ -84,10 +84,6 @@ _Quality is more important then quantity!_
 
 ![desktop](screenshots/murz/desktop.png)
 
-![rofi](screenshots/murz/rofi.png)
-
-![some apps](screenshots/murz/some-apps.png)
-
 ## Chnvok (same as Murz, but with a different style)
 
 ![desktop](screenshots/chnvok/desktop.png)
@@ -96,38 +92,18 @@ _Quality is more important then quantity!_
 
 ![desktop](screenshots/dracula/desktop.png)
 
-![rofi](screenshots/dracula/rofi.png)
-
-![some apps](screenshots/dracula/some-apps.png)
-
 ## Gruvbox
 
 ![desktop](screenshots/gruvbox/desktop.png)
-
-![rofi](screenshots/gruvbox/rofi.png)
-
-![some apps](screenshots/gruvbox/some-apps.png)
 
 ## Material
 
 ![desktop](screenshots/material/desktop.png)
 
-![rofi](screenshots/material/rofi.png)
-
-![some apps](screenshots/material/some-apps.png)
-
 ## Minimal
 
 ![desktop](screenshots/minimal/desktop.png)
 
-![rofi](screenshots/minimal/rofi.png)
-
-![some apps](screenshots/minimal/some-apps.png)
-
 ## Nord
 
 ![desktop](screenshots/nord/desktop.png)
-
-![rofi](screenshots/nord/rofi.png)
-
-![pomotroid](screenshots/nord/some-apps.png)
