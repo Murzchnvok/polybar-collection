@@ -85,7 +85,7 @@ _Enjoy!_
 
 ![desktop](screenshots/murz/desktop.png)
 
-## Chnvok (same as Murz, but with a different style)
+## Chnvok
 
 ![desktop](screenshots/chnvok/desktop.png)
 
@@ -109,7 +109,7 @@ _Enjoy!_
 
 ![desktop](screenshots/nord/desktop.png)
 
-### Based on the themes from the official website
+# Based on the themes from the official website
 
 ## Blue
 
