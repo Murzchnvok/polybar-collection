@@ -48,7 +48,7 @@ or create a symlink of the folder in the _\$HOME/.config/polybar/_ directory:
 
 ```bash
 $HOME
--> ln -s $HOME/Projects/polybar-collection/nord $HOME/.config/polybar/
+-> ln -s $HOME/Projects/polybar-collection/themes/nord $HOME/.config/polybar/
 ```
 
 ### Running
