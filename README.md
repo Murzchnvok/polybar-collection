@@ -81,9 +81,13 @@ $HOME
 
 _Enjoy!_
 
-## Based on the themes from the official website
+### Based on the themes from the official website
+
+## Blue
 
 ![desktop](screenshots/blue/desktop.png)
+
+## White
 
 ![desktop](screenshots/white/desktop.png)
 
