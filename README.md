@@ -81,40 +81,40 @@ $HOME
 
 _Enjoy!_
 
-## Murz
+### Murz
 
 ![desktop](screenshots/murz/desktop.png)
 
-## Chnvok
+### Chnvok
 
 ![desktop](screenshots/chnvok/desktop.png)
 
-## Dracula
+### Dracula
 
 ![desktop](screenshots/dracula/desktop.png)
 
-## Gruvbox
+### Gruvbox
 
 ![desktop](screenshots/gruvbox/desktop.png)
 
-## Material
+### Material
 
 ![desktop](screenshots/material/desktop.png)
 
-## Minimal
+### Minimal
 
 ![desktop](screenshots/minimal/desktop.png)
 
-## Nord
+### Nord
 
 ![desktop](screenshots/nord/desktop.png)
 
-# Based on the themes from the official website
+## Based on the themes from the official website
 
-## Blue
+### Blue
 
 ![desktop](screenshots/blue/desktop.png)
 
-## White
+### White
 
 ![desktop](screenshots/white/desktop.png)
