@@ -14,6 +14,7 @@ You need to download and install these fonts from [NerdFonts](https://www.nerdfo
 
 - JetBrainsMono
 - Iosevka
+- UbuntuMono
 
 Also you'll need to install [MaterialIcons](https://github.com/google/material-design-icons).
 

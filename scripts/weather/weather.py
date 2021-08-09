@@ -29,10 +29,12 @@ def openweather(city=NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KEY):
         if request.getcode() == 200:
             data = json.loads(request.read())
 
+            temp = int(data["main"]["temp"])
+
             return {
                 "name": data["name"],
                 "country": iso3().get(data["sys"]["country"]),
-                "temp": data["main"]["temp"],
+                "temp": temp,
                 "unit": check_unit(unit),
                 "description": data["weather"][0]["description"],
             }
