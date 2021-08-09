@@ -81,16 +81,6 @@ $HOME
 
 _Enjoy!_
 
-### Based on the themes from the official website
-
-## Blue
-
-![desktop](screenshots/blue/desktop.png)
-
-## White
-
-![desktop](screenshots/white/desktop.png)
-
 ## Murz
 
 ![desktop](screenshots/murz/desktop.png)
@@ -118,3 +108,13 @@ _Enjoy!_
 ## Nord
 
 ![desktop](screenshots/nord/desktop.png)
+
+### Based on the themes from the official website
+
+## Blue
+
+![desktop](screenshots/blue/desktop.png)
+
+## White
+
+![desktop](screenshots/white/desktop.png)
