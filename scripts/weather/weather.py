@@ -42,7 +42,7 @@ def openweather(city=NAME, lang=LANG, unit=UNIT, api_key=OPENWEATHER_API_KEY):
         else:
             print(f"E: {request.getcode()}")
 
-    except Exception as e:
+    except:
         pass
 
 

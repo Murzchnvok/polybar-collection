@@ -3,7 +3,7 @@ import urllib.request
 
 
 def get_ip():
-    request = urllib.request.urlopen("https://api.ipify.org?format=json")
+    request = urllib.request.urlopen("https://ipapi.co/json")
     if request.getcode() == 200:
         data = json.loads(request.read())
         return data["ip"]
