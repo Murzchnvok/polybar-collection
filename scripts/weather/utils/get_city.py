@@ -1,13 +1,21 @@
 import json
 import urllib.request
 
-from .get_ip import get_ip
+
+def return_city(city):
+    return "+".join(city.strip().split())
 
 
-def get_city():
-    request = urllib.request.urlopen("http://ip-api.com/json/" + get_ip())
-    if request.getcode() == 200:
-        data = json.loads(request.read())
-        return data["city"]
-    else:
-        print(f"E: {request.getcode()}")
+def get_city(default_city="London"):
+    try:
+        request = urllib.request.urlopen("https://ipapi.co/json")
+        if request.getcode() == 200:
+            try:
+                data = json.loads(request.read())
+                return return_city(data["city"])
+            except json.JSONDecodeError:
+                print("E: Couldn't load Json data.")
+        else:
+            print(f"E: {request.getcode()}")
+    except:
+        return return_city(default_city)

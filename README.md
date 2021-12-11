@@ -72,6 +72,12 @@ $HOME
 -> cd $HOME/polybar-collection && git pull
 ```
 
+## Weather app
+
+As pointed out by Dennis Perrone, my personal OpenWeather API Key is in the project as a constant, and I did this intentionally so it just works, and it's fine if you want to use it the same as me, but I'll suggest you to create your own API Key for free in the official [OpenWeather](https://openweathermap.org/api) website. There's a limit of requests you can make using the same API Key, so we both could be without the weather info if a lot of requests are made.
+
+After you create your API Key, you can pass as an argument in the _weather.sh_ script, or you can set an environment variable for OPENWEATHER_API_KEY with your own API Key:
+
 ## You might be interested
 
 - [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
