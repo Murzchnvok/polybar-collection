@@ -1,6 +1,11 @@
 import json
 import urllib.request
 
+# r = requests.get("https://ipapi.co/json", headers={"user-agent": "Mozilla/5.0"})
+# r = requests.get(url, headers={"user-agent": "Mozilla/5.0"})
+# data = r.json()
+# print(data["city"])
+
 
 def return_city(city):
     return "+".join(city.strip().split())
