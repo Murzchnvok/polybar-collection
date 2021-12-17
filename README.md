@@ -65,7 +65,7 @@ $HOME
 Now we only have one file **modules.ini** to change the modules that we like to use. I believe that's a better way to configure our Polybar themes:
 
 ```ini
-modules-left = date daily nft tor weather bspwm i3
+modules-left = date wallz nft tor weather bspwm i3
 modules-center = mpd
 modules-right = wired cpu memory xbacklight pulseaudio
 ```
