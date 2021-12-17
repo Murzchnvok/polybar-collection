@@ -39,20 +39,6 @@ $HOME
 -> ln -s $HOME/Projects/polybar-collection $HOME/polybar-collection
 ```
 
-Other option is to copy a config folder to _\$HOME/.config/polybar/_ directory:
-
-```bash
-$HOME
--> cp -r material $HOME/.config/polybar
-```
-
-or create a symlink of the folder in the _\$HOME/.config/polybar/_ directory:
-
-```bash
-$HOME
--> ln -s $HOME/Projects/polybar-collection/themes/nord $HOME/.config/polybar/
-```
-
 ### Running
 
 BSPwm
@@ -74,11 +60,27 @@ $HOME
 -> cd $HOME/polybar-collection && git pull
 ```
 
+## Few changes
+
+Now we only have one file **modules.ini** to change the modules that we like to use. I believe that's a better way to configure our Polybar themes:
+
+```ini
+modules-left = date daily nft tor weather bspwm i3
+modules-center = mpd
+modules-right = wired cpu memory xbacklight pulseaudio
+```
+
+The only problem with this, is that some themes don't have certain modules, for now at least! I'm planning on making this collection easier to setup, so if you have any ideas you can always share.
+
 ## Weather app
 
 As pointed out by Dennis Perrone, my personal OpenWeather API Key is in the project as a constant, and I did this intentionally so it just works, and it's fine if you want to use it the same as me, but I'll suggest you to create your own API Key for free in the official [OpenWeather](https://openweathermap.org/api) website. There's a limit of requests you can make using the same API Key, so we both could be without the weather info if a lot of requests are made.
 
-After you create your API Key, you can pass as an argument in the _weather.sh_ script, or you can set an environment variable for OPENWEATHER_API_KEY with your own API Key:
+After you create your API Key, you can pass as an argument in the **weather.sh** script, or you can set an environment variable for **OPENWEATHER_API_KEY** with your own API Key:
+
+## Wallz
+
+Still thinking about this one, maybe I should add more 'backend' options, for now is only using Bing API, but I could add more options since Bing API have a 'limited', but with a really good quality, wallpapers collection. For now I'll be only using on minimal theme, but when I'm 'done' I'll add to the others.
 
 ## You might be interested
 
@@ -93,29 +95,71 @@ _Enjoy!_
 
 ![desktop](screenshots/murz/desktop.png)
 
+```ini
+modules-left = date weather round-right margin round-left memory cpu xbacklight pulseaudio round-right
+modules-center = round-left bspwm i3 round-right
+modules-right = round-left wired round-right margin round-left mpd
+```
+
 ### Chnvok
 
 ![desktop](screenshots/chnvok/desktop.png)
+
+```ini
+modules-left = date weather mpd
+modules-center = bspwm
+modules-right = memory cpu xbacklight pulseaudio session
+```
 
 ### Dracula
 
 ![desktop](screenshots/dracula/desktop.png)
 
+```ini
+modules-left = date margin weather margin mpd
+modules-center = bspwm i3
+modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery margin session
+```
+
 ### Gruvbox
 
 ![desktop](screenshots/gruvbox/desktop.png)
+
+```ini
+modules-left = bspwm i3
+modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
+modules-right = memory cpu pulseaudio xbacklight battery session
+```
 
 ### Material
 
 ![desktop](screenshots/material/desktop.png)
 
+```ini
+modules-left = weather tri-upper-right tri-lower-left-orange date tri-upper-right tri-lower-left-green mpd honey-right
+modules-center = trap-left bspwm trap-right
+modules-right = lego-left-green memory trap-right lego-left-cyan cpu trap-right lego-left-yellow xbacklight trap-right lego-left-orange pulseaudio trap-right lego-left-cyan battery
+```
+
 ### Minimal
 
 ![desktop](screenshots/minimal/desktop.png)
 
+```ini
+modules-left = date wallz nft tor weather bspwm i3
+modules-center = mpd
+modules-right = wired wlan cpu memory xbacklight pulseaudio
+```
+
 ### Nord
 
 ![desktop](screenshots/nord/desktop.png)
+
+```ini
+modules-left = weather trap-left-orange margin trap-right-green date margin mpd round-right
+modules-center = trap-left bspwm i3 trap-right
+modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery trap-right trap-right-orange session trap-left-orange
+```
 
 ## Based on the themes from the official website
 
@@ -123,6 +167,18 @@ _Enjoy!_
 
 ![desktop](screenshots/blue/desktop.png)
 
+```ini
+modules-left = margin bspwm i3
+modules-center = date
+modules-right = pulseaudio dnd wlan margin
+```
+
 ### White
 
 ![desktop](screenshots/white/desktop.png)
+
+```ini
+modules-left = margin bspwm i3
+modules-center = mpd
+modules-right = date margin sep margin session margin
+```
