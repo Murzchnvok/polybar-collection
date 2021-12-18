@@ -19,6 +19,12 @@ You need to download and install these fonts from [NerdFonts](https://www.nerdfo
 - UbuntuMono
 
 Also you'll need to install [MaterialIcons](https://github.com/google/material-design-icons).
+You have the option to clone the [MaterialIcons](https://github.com/google/material-design-icons) repo, or to move the local **MaterialIcons** to **$HOME/.fonts/** and running:
+
+```bash
+$HOME
+-> fc-cache -fv
+```
 
 ### Cloning
 
