@@ -176,25 +176,3 @@ modules-left = bspwm margin date margin weather margin mpd
 modules-center =
 modules-right = cpu margin memory margin pulseaudio margin xbacklight margin wallz margin session
 ```
-
-## Based on the themes from the official website
-
-### Blue
-
-![desktop](screenshots/blue/desktop.png)
-
-```ini
-modules-left = margin bspwm
-modules-center = date
-modules-right = pulseaudio dnd wlan margin
-```
-
-### White
-
-![desktop](screenshots/white/desktop.png)
-
-```ini
-modules-left = margin bspwm
-modules-center = mpd
-modules-right = date margin sep margin session margin
-```
