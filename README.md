@@ -2,7 +2,7 @@
 
 My personal collection. Trying to make some nice themes, and show how great [Polybar](https://github.com/polybar/polybar) is. I'll keep updating the collection, and maybe create some custom scripts so you and I can have a better experience with this thing. I also recommend you to check this [adi1090x Polybar Collection](https://github.com/adi1090x/polybar-themes), has some great themes, so if you don't like my collection, you can just check the other one. Also the reason why I'm doing this is because I want you to have more options and ideas to build your own theme.
 
-Currently trying a few things, if you find something wrong or have any idea just open an issue or send a message on my discord/reddit.
+Currently trying a few things, read this README with attention.
 
 ## Getting Started
 
@@ -103,7 +103,7 @@ _Enjoy!_
 
 ```ini
 modules-left = date weather round-right margin round-left memory cpu xbacklight pulseaudio round-right
-modules-center = round-left bspwm i3 round-right
+modules-center = round-left bspwm round-right
 modules-right = round-left wired round-right margin round-left mpd
 ```
 
@@ -123,7 +123,7 @@ modules-right = memory cpu xbacklight pulseaudio session
 
 ```ini
 modules-left = date margin weather margin mpd
-modules-center = bspwm i3
+modules-center = bspwm
 modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery margin session
 ```
 
@@ -132,7 +132,7 @@ modules-right = memory margin cpu margin xbacklight margin pulseaudio margin bat
 ![desktop](screenshots/gruvbox/desktop.png)
 
 ```ini
-modules-left = bspwm i3
+modules-left = bspwm
 modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
 modules-right = memory cpu pulseaudio xbacklight battery session
 ```
@@ -152,7 +152,7 @@ modules-right = lego-left-green memory trap-right lego-left-cyan cpu trap-right 
 ![desktop](screenshots/minimal/desktop.png)
 
 ```ini
-modules-left = date wallz nft tor weather bspwm i3
+modules-left = date wallz nft tor weather bspwm
 modules-center = mpd
 modules-right = wired wlan cpu memory xbacklight pulseaudio
 ```
@@ -163,8 +163,18 @@ modules-right = wired wlan cpu memory xbacklight pulseaudio
 
 ```ini
 modules-left = weather trap-left-orange margin trap-right-green date margin mpd round-right
-modules-center = trap-left bspwm i3 trap-right
+modules-center = trap-left bspwm trap-right
 modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery trap-right trap-right-orange session trap-left-orange
+```
+
+### One Dark
+
+![desktop](screenshots/onedark/desktop.png)
+
+```ini
+modules-left = bspwm margin date margin weather margin mpd
+modules-center =
+modules-right = cpu margin memory margin pulseaudio margin xbacklight margin wallz margin session
 ```
 
 ## Based on the themes from the official website
@@ -174,7 +184,7 @@ modules-right = memory margin cpu margin xbacklight margin pulseaudio margin bat
 ![desktop](screenshots/blue/desktop.png)
 
 ```ini
-modules-left = margin bspwm i3
+modules-left = margin bspwm
 modules-center = date
 modules-right = pulseaudio dnd wlan margin
 ```
@@ -184,7 +194,7 @@ modules-right = pulseaudio dnd wlan margin
 ![desktop](screenshots/white/desktop.png)
 
 ```ini
-modules-left = margin bspwm i3
+modules-left = margin bspwm
 modules-center = mpd
 modules-right = date margin sep margin session margin
 ```
