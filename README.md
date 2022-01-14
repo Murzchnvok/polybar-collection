@@ -102,9 +102,9 @@ _Enjoy!_
 ![desktop](screenshots/murz/desktop.png)
 
 ```ini
-modules-left = date weather round-right margin round-left memory cpu xbacklight pulseaudio round-right
+modules-left = date weather round-right
 modules-center = round-left bspwm round-right
-modules-right = round-left wired round-right margin round-left mpd
+modules-right = round-left mpd
 ```
 
 ### Chnvok
@@ -134,7 +134,7 @@ modules-right = memory margin cpu margin xbacklight margin pulseaudio margin bat
 ```ini
 modules-left = bspwm
 modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
-modules-right = memory cpu pulseaudio xbacklight battery session
+modules-right = dnd margin wallz margin session
 ```
 
 ### Material
