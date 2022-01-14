@@ -152,9 +152,9 @@ modules-right = lego-left-green memory trap-right lego-left-cyan cpu trap-right 
 ![desktop](screenshots/minimal/desktop.png)
 
 ```ini
-modules-left = date wallz nft tor weather bspwm
+modules-left = date weather bspwm
 modules-center = mpd
-modules-right = wired wlan cpu memory xbacklight pulseaudio
+modules-right = cpu memory xbacklight pulseaudio
 ```
 
 ### Nord
