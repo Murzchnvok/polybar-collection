@@ -162,9 +162,9 @@ modules-right = cpu memory xbacklight pulseaudio
 ![desktop](screenshots/nord/desktop.png)
 
 ```ini
-modules-left = weather trap-left-orange margin trap-right-green date margin mpd round-right
+modules-left = date margin weather margin mpd round-right
 modules-center = trap-left bspwm trap-right
-modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery trap-right trap-right-orange session trap-left-orange
+modules-right = memory margin cpu margin xbacklight margin pulseaudio margin wallz margin session
 ```
 
 ### One Dark
