@@ -1,13 +1,6 @@
-import sys
+import argparse
 
 from .usage_message import USAGE_MESSAGE
-
-try:
-    import argparse
-except:
-    print("Module 'argparse' not installed.")
-    print("Run: pip3 install -r requirements.txt")
-    sys.exit(0)
 
 parser = argparse.ArgumentParser(
     usage=USAGE_MESSAGE,

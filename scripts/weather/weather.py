@@ -1,56 +1,61 @@
-import json
 import os
-import urllib.request
 
-from utils.check_unit import check_unit
-from utils.get_city import get_city
-from utils.iso3 import iso3
-from utils.parser import args
+import requests
+
+from util.get_city import get_city
+from util.get_iso3 import get_iso3
+from util.parser import args
+from util.unit_suffix import unit_suffix
 
 # Get your API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
 API_KEY = "970606528befaa317698cc75083db8b2"
-OPENWEATHER_API_KEY = (
-    args.api_key[0] if args.api_key else os.environ.get("OPENWEATHER_API_KEY", API_KEY)
-)
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
-def openweather(city, lang, unit, api_key=OPENWEATHER_API_KEY):
+def openweather(city: str, lang: str, unit: str, api_key: str) -> dict:
     try:
-        url = f"{OPENWEATHER_URL}?q={city}&lang={lang}&units={unit}&appid={api_key}"
-        request = urllib.request.urlopen(url)
-        if request.getcode() == 200:
-            data = json.loads(request.read())
-            return {
-                "name": data["name"],
-                "country": iso3().get(data["sys"]["country"]),
-                "temp": int(data["main"]["temp"]),
-                "unit": check_unit(unit),
-                "description": data["weather"][0]["description"],
-            }
-        else:
-            print(f"E: {request.getcode()}")
+        r = requests.get(
+            f"{OPENWEATHER_URL}?q={city}&lang={lang}&units={unit}&appid={api_key}"
+        )
+        data = r.json()
+        city = data.get("name")
+        country = data.get("sys").get("country")
+        temp = data.get("main").get("temp")
+        unit = unit
+        desc = data.get("weather")[0].get("description")
+
+        return {
+            "city": city,
+            "country": get_iso3(country),
+            "temp": int(temp),
+            "unit": unit_suffix(unit),
+            "desc": desc.title(),
+        }
     except:
-        return None
+        return {"error": "something is not right"}
 
 
-if __name__ == "__main__":
+def main() -> None:
     city = args.city[0] if args.city else get_city()
     lang = args.lang[0] if args.lang else "en"
     unit = args.unit[0] if args.unit else "standard"
+    api_key = (
+        args.api_key[0]
+        if args.api_key
+        else os.environ.get("OPENWEATHER_API_KEY", API_KEY)
+    )
 
-    weather = openweather(city, lang, unit)
-    if weather:
-        name = weather.get("name")
-        country = weather.get("country")
-        temp = weather.get("temp")
-        unit = weather.get("unit")
-        description = weather.get("description")
-
+    weather = openweather(city, lang, unit, api_key)
+    if error := weather.get("error"):
+        print(error)
+    else:
+        city, country, temp, unit, desc = weather.values()
         if args.verbose:
-            print(f"{temp}{unit}, {description.title()} - {name}, {country}")
+            print(f"{temp}{unit}, {desc} - {city}, {country}")
         else:
             print(f"{temp}{unit}")
-    else:
-        print("-1")
+
+
+if __name__ == "__main__":
+    main()
