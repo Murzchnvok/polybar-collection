@@ -16,6 +16,6 @@ Some examples:
 ~$ %(prog)s -c florida -u metric -v
 ::> 27ºC, Thunderstorm
 
-~$ %(prog)s -c "rio de janeiro" -u metric -a 439d4b804bc8187953eb36d2a8c26a02 -v -l pt_br
+~$ %(prog)s -c rio de janeiro -u metric -a 439d4b804bc8187953eb36d2a8c26a02 -v -l pt_br
 ::> 25ºC, Céu Limpo
 """

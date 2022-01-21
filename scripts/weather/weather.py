@@ -2,10 +2,7 @@ import os
 
 import requests
 
-from util.get_city import get_city
-from util.get_iso3 import get_iso3
-from util.parser import args
-from util.unit_suffix import unit_suffix
+from util import location_info, parser, unit_info
 
 # Get your API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
@@ -22,14 +19,13 @@ def openweather(city: str, lang: str, unit: str, api_key: str) -> dict:
         city = data.get("name")
         country = data.get("sys").get("country")
         temp = data.get("main").get("temp")
-        unit = unit
         desc = data.get("weather")[0].get("description")
 
         return {
             "city": city,
-            "country": get_iso3(country),
+            "country": location_info.country_code_to_iso3(country),
             "temp": int(temp),
-            "unit": unit_suffix(unit),
+            "unit": unit_info.unit_suffix(unit),
             "desc": desc.title(),
         }
     except:
@@ -37,14 +33,20 @@ def openweather(city: str, lang: str, unit: str, api_key: str) -> dict:
 
 
 def main() -> None:
-    city = args.city[0] if args.city else get_city()
+    args = parser.args
+
+    if city := args.city:
+        city = location_info.format_city(city)
+    else:
+        city = location_info.get_city()
+
+    if api_key := args.api_key:
+        api_key = api_key[0]
+    else:
+        api_key = os.environ.get("OPENWEATHER_API_KEY", API_KEY)
+
     lang = args.lang[0] if args.lang else "en"
     unit = args.unit[0] if args.unit else "standard"
-    api_key = (
-        args.api_key[0]
-        if args.api_key
-        else os.environ.get("OPENWEATHER_API_KEY", API_KEY)
-    )
 
     weather = openweather(city, lang, unit, api_key)
     if error := weather.get("error"):

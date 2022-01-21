@@ -11,7 +11,7 @@ parser.add_argument(
     metavar="CITY",
     dest="city",
     type=str,
-    nargs=1,
+    nargs="*",
     help="city name (default: try to get your city using your public ip address)",
 )
 parser.add_argument(
