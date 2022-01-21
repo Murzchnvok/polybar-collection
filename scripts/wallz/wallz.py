@@ -5,7 +5,7 @@ from pathlib import Path
 
 import requests
 
-from utils.parser import args
+from util import parser
 
 BASE_DIR = Path(__file__).parent
 
@@ -102,8 +102,10 @@ class Wallz:
         json.dump(self.urls, open(self.URLS_FILE, "w"), indent=True)
 
 
-if __name__ == "__main__":
+def main() -> None:
     wallz = Wallz()
+
+    args = parser.args
     if args.clear:
         wallz.clear_urls()
     elif args.remove:
@@ -112,3 +114,7 @@ if __name__ == "__main__":
         wallz.get_image()
     else:
         wallz.get_image(daily=False)
+
+
+if __name__ == "__main__":
+    main()
