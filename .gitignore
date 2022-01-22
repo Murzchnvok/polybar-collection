@@ -1,4 +1,4 @@
-.vscode
-__pycache__
-wallpapers
+.vscode/
+__pycache__/
+wallpapers/
 urls.json
