@@ -1,4 +1,5 @@
 import json
+import logging
 from pathlib import Path
 
 import requests
@@ -17,5 +18,5 @@ def get_city() -> str:
         r = requests.get("https://ipapi.co/json")
         data = r.json()
         return data["city"]
-    except:
-        print("Couldn't load json data")
+    except Exception:
+        logging.error("couldn't get city name")

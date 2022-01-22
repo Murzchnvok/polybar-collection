@@ -1,3 +1,4 @@
+import logging
 import os
 
 import requests
@@ -28,8 +29,8 @@ def openweather(city: str, lang: str, unit: str, api_key: str) -> dict:
             "unit": unit_info.unit_suffix(unit),
             "desc": desc.title(),
         }
-    except:
-        return {"error": "something is not right"}
+    except Exception:
+        logging.error("couldn't get data from openweather")
 
 
 def main() -> None:
@@ -49,9 +50,7 @@ def main() -> None:
     unit = args.unit[0] if args.unit else "standard"
 
     weather = openweather(city, lang, unit, api_key)
-    if error := weather.get("error"):
-        print(error)
-    else:
+    if weather:
         city, country, temp, unit, desc = weather.values()
         if args.verbose:
             print(f"{temp}{unit}, {desc} - {city}, {country}")
