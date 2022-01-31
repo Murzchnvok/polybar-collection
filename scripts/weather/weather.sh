@@ -1,2 +1,2 @@
 #!/bin/sh
-python3 $HOME/polybar-collection/scripts/weather/weather.py -u metric
+python3 $HOME/polybar-collection/scripts/weather/main.py -u metric

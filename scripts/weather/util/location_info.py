@@ -1,22 +1,13 @@
-import json
-import logging
-from pathlib import Path
-
 import requests
 
 
-def country_code_to_iso3(alpha2: str) -> str:
-    return json.loads(open(Path(__file__).parent / "iso3.json").read()).get(alpha2)
-
-
-def format_city(city: list) -> str:
-    return " ".join(city).title()
+def format_city(city: list[str]) -> str:
+    return "+".join(city).title()
 
 
 def get_city() -> str:
     try:
-        r = requests.get("https://ipapi.co/json")
-        data = r.json()
-        return data["city"]
+        r = requests.get("https://ipapi.co/json", headers={"User-agent": "Mozilla/5.0"})
+        return r.json()["city"]
     except Exception:
-        logging.error("couldn't get city name")
+        return "london"
