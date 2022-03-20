@@ -1,24 +1,19 @@
 import os
+import parser
 
 import openweather
-from util import location_info, parser
+from util import get_city
 
 # Get your API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
 OPENWEATHER_API_KEY = "970606528befaa317698cc75083db8b2"
+API_KEY = os.environ.get("OPENWEATHER_API_KEY", OPENWEATHER_API_KEY)
 
 
 def main() -> None:
     args = parser.args
-
-    city = (
-        location_info.format_city(args.city) if args.city else location_info.get_city()
-    )
-    api_key = (
-        args.api_key[0]
-        if args.api_key
-        else os.environ.get("OPENWEATHER_API_KEY", OPENWEATHER_API_KEY)
-    )
+    api_key = args.api_key[0] if args.api_key else API_KEY
+    city = args.city if args.city else get_city()
     lang = args.lang[0] if args.lang else "en"
     unit = args.unit[0] if args.unit else "standard"
 

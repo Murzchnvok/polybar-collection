@@ -1,6 +1,6 @@
 import requests
 
-from util import unit_info
+from util import unit_suffix
 
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 
@@ -12,9 +12,9 @@ def get_weather(city: str, lang: str, unit: str, api_key: str) -> dict[str, str]
             headers={"User-agent": "Mozilla/5.0"},
         )
         data = r.json()
-        temp = data.get("main").get("temp")
-        desc = data.get("weather")[0].get("description")
-        unit = unit_info.unit_suffix(unit)
+        temp = data["main"]["temp"]
+        desc = data["weather"][0]["description"]
+        unit = unit_suffix(unit)
 
         return {
             "temp": f"{int(temp)}{unit}",
