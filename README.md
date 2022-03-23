@@ -12,14 +12,10 @@ You need to install Polybar, NerdFonts and MaterialIcons:
 
 [Compiling Polybar](https://github.com/polybar/polybar/wiki/Compiling)
 
-You need to download and install these fonts from [NerdFonts](https://www.nerdfonts.com/font-downloads):
+The default font is `JetBrainsMono`, you can download and install from [NerdFonts](https://www.nerdfonts.com/font-downloads):
 
-- JetBrainsMono
-- Iosevka
-- UbuntuMono
-
-Also you'll need to install [MaterialIcons](https://github.com/google/material-design-icons).
-You have the option to clone the [MaterialIcons](https://github.com/google/material-design-icons) repo, or to move the local **MaterialIcons** to **$HOME/.fonts/** and running:
+Also you'll need [MaterialIcons](https://github.com/google/material-design-icons).
+You can download from here [MaterialIcons](https://github.com/google/material-design-icons), or move the local **MaterialIcons** to **$HOME/.fonts/** and run:
 
 ```bash
 $HOME
