@@ -142,9 +142,9 @@ modules-right = cpu memory pulseaudio xbacklight
 ![desktop](screenshots/material/desktop.png)
 
 ```ini
-modules-left = weather tri-upper-right tri-lower-left-orange date tri-upper-right tri-lower-left-green mpd honey-right
-modules-center = trap-left bspwm trap-right
-modules-right = lego-left-green memory trap-right lego-left-cyan cpu trap-right lego-left-yellow xbacklight trap-right lego-left-orange pulseaudio trap-right lego-left-cyan battery
+modules-left = weather margin date margin mpd tri-upper-right tri-lower-left bspwm tri-upper-right
+modules-center = 
+modules-right = memory margin cpu margin xbacklight margin pulseaudio
 ```
 
 ### Minimal
