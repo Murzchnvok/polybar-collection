@@ -1,119 +1,60 @@
-import json
+import argparse
 import shutil
 import subprocess
 from pathlib import Path
 
 import requests
 
-from util import parser
-
 BASE_DIR = Path(__file__).parent
+WALL_DIR = BASE_DIR / "wallpapers"
+
+if not Path.is_dir(WALL_DIR):
+    Path.unlink(WALL_DIR, missing_ok=True)
+    Path.mkdir(WALL_DIR, exist_ok=True)
 
 BASE_URL = "https://www.bing.com"
-LANG_CODES = ["en-US", "ja-JP"]
-
-WALL_DIR = BASE_DIR / "wallpapers"
-if not Path.exists(WALL_DIR):
-    Path.mkdir(WALL_DIR)
+API_URL = f"{BASE_URL}/HPImageArchive.aspx?format=js&n=1"
 
 
-class Wallz:
-    def __init__(self):
-        self.URLS_FILE = BASE_DIR / "urls.json"
-        self.urls = {}
+def set_wallpaper(filepath: Path) -> None:
+    subprocess.run(["feh", "--bg-fill", filepath])
 
-        try:
-            self.urls = json.loads(open(self.URLS_FILE, "r+").read())
-        except FileNotFoundError:
-            open(self.URLS_FILE, "w+").write("{}")
-        except json.decoder.JSONDecodeError:
-            pass
 
-    def get_daily(self):
-        r = requests.get(
-            f"{BASE_URL}/HPImageArchive.aspx?format=js&n=1",
-            headers={"user-agent": "Mozilla/5.0"},
-        )
-        url = r.json()["images"][0]["url"]
-        return self.return_url(url)
+def remove_wallpapers() -> None:
+    shutil.rmtree(WALL_DIR, ignore_errors=True)
 
-    def get_urls(self):
-        for code in LANG_CODES:
-            for i in range(2):
-                print(i, code)
-                r = requests.get(
-                    f"{BASE_URL}/HPImageArchive.aspx?format=js&n=8&idx={i}&mkt={code}",
-                    headers={"user-agent": "Mozilla/5.0"},
-                )
-                data = r.json()["images"]
-                for url in data:
-                    url, filename = self.return_url(url["url"])
-                    self.urls[self.set_id()] = {"url": url, "filename": filename}
-        self.save_to_json()
 
-    def get_url(self):
-        if len(self.urls) == 0:
-            self.get_urls()
-
-        try:
-            data = self.urls.pop(list(self.urls.keys())[0])
-            self.save_to_json()
-            return data["url"], data["filename"]
-        except KeyError:
-            self.get_urls()
-        self.save_to_json()
-
-    def get_image(self, daily=True):
-        if daily:
-            url, filename = self.get_daily()
-        else:
-            url, filename = self.get_url()
-
-        filepath = WALL_DIR / filename
+def get_daily_wallpaper() -> None:
+    with requests.Session() as s:
+        r = s.get(API_URL).json().get("images")[0]
+        image_url = r.get("url")
+        filepath = WALL_DIR / (image_url.split(".")[1] + ".jpg")
         if not filepath.exists():
-            r = requests.get(url, headers={"user-agent": "Mozilla/5.0"})
+            r = s.get(BASE_URL + image_url)
             with open(filepath, "wb") as f:
-                for chunk in r.iter_content(chunk_size=128):
-                    f.write(chunk)
+                [f.write(chunk) for chunk in r.iter_content(chunk_size=None)]
 
-        self.set_image(filepath)
-
-    def set_image(self, filepath):
-        subprocess.run(["feh", "--bg-fill", filepath])
-
-    def return_url(self, url):
-        url = f"{BASE_URL}{url}"
-        filename = url.split("id=")[1].split("&")[0]
-        return url, filename
-
-    def clear_urls(self):
-        Path.unlink(self.URLS_FILE, missing_ok=True)
-
-    def remove_images(self):
-        shutil.rmtree(WALL_DIR, ignore_errors=True)
-
-    def set_id(self):
-        try:
-            return str(max(int(k) for k in self.urls.keys()) + 1)
-        except ValueError:
-            return "1"
-
-    def save_to_json(self):
-        json.dump(self.urls, open(self.URLS_FILE, "w"), indent=True)
+    set_wallpaper(filepath)
 
 
 def main() -> None:
-    wallz = Wallz()
+    parser = argparse.ArgumentParser(
+        description="Download Bing Daily Wallpaper.",
+    )
+    parser.add_argument(
+        "-r",
+        "--remove",
+        action="store_true",
+        dest="remove",
+        help="remove downloaded wallpapers",
+    )
 
-    args = parser.args
-    if args.clear:
-        wallz.clear_urls()
-    elif args.remove:
-        wallz.remove_images()
-    elif args.daily:
-        wallz.get_image()
+    args = parser.parse_args()
+
+    if args.remove:
+        remove_wallpapers()
     else:
-        wallz.get_image(daily=False)
+        get_daily_wallpaper()
 
 
 if __name__ == "__main__":
