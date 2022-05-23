@@ -2,40 +2,42 @@
 
 My personal collection. Trying to make some nice themes, and show how great [Polybar](https://github.com/polybar/polybar) is. I'll keep updating the collection, and maybe create some custom scripts so you and I can have a better experience with this thing. I also recommend you to check this [adi1090x Polybar Collection](https://github.com/adi1090x/polybar-themes), has some great themes, so if you don't like my collection, you can just check the other one. Also the reason why I'm doing this is because I want you to have more options and ideas to build your own theme.
 
-Currently trying a few things, read this README with attention.
+Read this README with attention.
 
 ## Getting Started
 
 ### Prerequisites
 
-You need to install Polybar, NerdFonts and MaterialIcons:
+First of all, install Polybar:
 
 [Compiling Polybar](https://github.com/polybar/polybar/wiki/Compiling)
 
-The default font is `JetBrainsMono`, you can download and install from [NerdFonts](https://www.nerdfonts.com/font-downloads):
+By default the font used is `JetBrainsMono` (you can change it in the **fonts.ini** file), you can download and install from [NerdFonts](https://www.nerdfonts.com/font-downloads):
 
-Also you'll need [MaterialIcons](https://github.com/google/material-design-icons).
-You can download from here [MaterialIcons](https://github.com/google/material-design-icons), or move the local **MaterialIcons** to **$HOME/.fonts/** and run:
+Also you'll need [MaterialIcons](https://github.com/google/material-design-icons) and [Feather](https://feathericons.com/).
+You can move both **MaterialIcons** and **feather** inside **fonts** to **$HOME/.fonts/** and run:
 
 ```bash
 $HOME
 -> fc-cache -fv
 ```
 
+or just search how to install fonts!
+
 ### Cloning
 
-First you need to clone the repo in the \$HOME directory:
+Now you need to clone the repo in the \$HOME directory (because the path inside the files points to **$HOME/polybar-collection**):
 
 ```bash
 $HOME
--> git clone https://github.com/Murzchnvok/polybar-collection
+-> git clone --depth 1 https://github.com/Murzchnvok/polybar-collection
 ```
 
 or clone to other directory and create a symlink of the folder in the \$HOME directory:
 
 ```bash
 $HOME/Projects
--> git clone https://github.com/Murzchnvok/polybar-collection
+-> git clone --depth 1 https://github.com/Murzchnvok/polybar-collection
 
 $HOME
 -> ln -s $HOME/Projects/polybar-collection $HOME/polybar-collection
@@ -131,6 +133,16 @@ modules-right = memory margin cpu margin xbacklight margin pulseaudio margin bat
 modules-left = bspwm
 modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
 modules-right = cpu memory pulseaudio xbacklight
+```
+
+### Lofi
+
+![desktop](screenshots/lofi/desktop.png)
+
+```ini
+modules-left = bspwm
+modules-center = mpd
+modules-right = date weather
 ```
 
 ### Material
