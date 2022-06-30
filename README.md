@@ -131,7 +131,7 @@ modules-right = memory margin cpu margin xbacklight margin pulseaudio margin bat
 
 ```ini
 modules-left = bspwm
-modules-center = round-left-blue weather date round-right-blue margin round-left-blue mpd round-right
+modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
 modules-right = cpu memory pulseaudio xbacklight
 ```
 
