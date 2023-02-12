@@ -1,6 +1,6 @@
 import argparse
 import os
-
+import time
 import requests
 
 OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
@@ -100,13 +100,19 @@ def main() -> None:
     lang = args.lang[0] if args.lang else "en"
     unit = args.unit[0] if args.unit else "standard"
 
-    weather = get_weather(city, lang, unit, api_key)
-    if weather:
-        temp, desc = weather.values()
-        if args.verbose:
-            print(f"{temp}, {desc}")
-        else:
-            print(f"{temp}")
+    while True:
+        weather = get_weather(city, lang, unit, api_key)
+
+        if weather:
+            temp, desc = weather.values()
+            break
+
+        time.sleep(1)
+
+    if args.verbose:
+        print(f"{temp}, {desc}")
+    else:
+        print(f"{temp}")
 
 
 if __name__ == "__main__":
