@@ -2,19 +2,21 @@ import argparse
 import os
 
 import requests
+from requests.adapters import HTTPAdapter
 
-OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
+URL = "https://api.openweathermap.org/data/2.5/weather"
 # Get your API KEY here https://openweathermap.org/api,
 # and set an environment variable for OPENWEATHER_API_KEY with your API KEY.
-OPENWEATHER_API_KEY = "970606528befaa317698cc75083db8b2"
-API_KEY = os.environ.get("OPENWEATHER_API_KEY", OPENWEATHER_API_KEY)
+API_KEY = os.environ.get("OPENWEATHER_API_KEY", "970606528befaa317698cc75083db8b2")
+HEADER = {"User-agent": "Mozilla/5.0"}
 
 
 def get_city() -> str:
     try:
-        r = requests.get("https://ipapi.co/json", headers={"User-agent": "Mozilla/5.0"})
+        r = requests.get("https://ipapi.co/json", headers=HEADER)
         return r.json()["city"]
-    except Exception:
+    except requests.exceptions.ConnectionError:
+        print("E: couldn't get city name")
         return "london"
 
 
@@ -32,9 +34,12 @@ def unit_suffix(unit: str) -> str:
 
 def get_weather(city: str, lang: str, unit: str, api_key: str) -> dict[str, str] | None:
     try:
-        r = requests.get(
-            f"{OPENWEATHER_URL}?q={city}&lang={lang}&units={unit}&appid={api_key}",
-            headers={"User-agent": "Mozilla/5.0"},
+        s = requests.Session()
+        s.mount("https://", HTTPAdapter(max_retries=5))
+        r = s.get(
+            f"{URL}?q={city}&lang={lang}&units={unit}&appid={api_key}",
+            headers=HEADER,
+            timeout=10,
         )
         data = r.json()
         temp = data["main"]["temp"]
@@ -45,8 +50,10 @@ def get_weather(city: str, lang: str, unit: str, api_key: str) -> dict[str, str]
             "temp": f"{int(temp)}{unit}",
             "desc": desc.title(),
         }
-    except Exception:
-        return None
+
+    except requests.exceptions.ConnectionError:
+        print("E: failed to establish connection with the API")
+        raise
 
 
 def main() -> None:
