@@ -20,7 +20,8 @@ git clone --depth=1 https://github.com/Murzchnvok/polybar-collection
 
 #### Use
 > You need to set some environment variable, in my case I'll set on `/etc/environment`.
-> The only one you actually need is **POLYBAR_COLLECTION** with the path to the _polybar-collection_.
+
+> The only one you actually need is **POLYBAR_COLLECTION** with the path to the **polybar-collection**.
 
 First open the file:
 > I use nvim, change to whatever you use.
@@ -30,7 +31,7 @@ sudo nvim /etc/environment
 ```
 
 Add environment variable:
-> The _path_ needs to be where you cloned the _polybar-collection_
+> The path needs to be where you cloned the **polybar-collection**.
 
 ```bash
 POLYBAR_COLLECTION=/home/user/polybar-collection
@@ -47,7 +48,9 @@ Adicional variables are:
 
 To get battery values:
 
-`ls -1 /sys/class/power_supply/`
+```bash
+ls -1 /sys/class/power_supply/
+```
 
 will return your battery adaptar and "name", so it can return:
 
@@ -60,7 +63,9 @@ BAT0
 
 To get network values:
 
-`ip addr`
+```bash
+ip addr
+```
 
 will return something like this:
 
@@ -79,7 +84,9 @@ BSPWM
 
 Inside **.config/bspwm/bspwmrc** add the line.
 
-`$POLYBAR_COLLECTION/launch.sh &`
+```bash
+$POLYBAR_COLLECTION/launch.sh &
+```
 
 ### Customization
 
@@ -87,15 +94,18 @@ Inside **.config/bspwm/bspwmrc** add the line.
 
 Open `config.ini`, there's a comment for both colorscheme and theme.
 
-In the line below **; Colorscheme** you can change the _file.ini_ to whatever colorscheme is in the folder **colorscheme/**.
+In the line below **; Colorscheme** you can change the **file.ini** to whatever colorscheme is in the folder **colorscheme/**.
 
-`include-file = ${env:POLYBAR_COLLECTION}/colorscheme/file.ini`
+```bash
+include-file = ${env:POLYBAR_COLLECTION}/colorscheme/file.ini
+```
 
-The same goes to the theme, just change the name after _themes/_ to whatever theme you have in the folder **themes/**
+The same goes to the theme, just change the name after **themes/** to whatever theme you have in the folder **themes/**.
 
 #### Change font
 > By default is using **JetBrainsmono** font from [nerd fonts](https://www.nerdfonts.com/font-downloads).
-> I left a few comments like _icons normal size_, meaning this font is only used for icons, or _text normal_ meaning.. I know you already understood.
+
+> I left a few comments like **icons normal size**, meaning this font is only used for icons, or **text normal** meaning.. I know you already understood.
 
 Open `fonts.ini`, and change the fonts to whatever you like.
 
