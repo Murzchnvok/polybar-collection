@@ -1,186 +1,135 @@
-# Polybar Collection
-
-My personal collection. Trying to make some nice themes, and show how great [Polybar](https://github.com/polybar/polybar) is. I'll keep updating the collection, and maybe create some custom scripts so you and I can have a better experience with this thing. I also recommend you to check this [adi1090x Polybar Collection](https://github.com/adi1090x/polybar-themes), has some great themes, so if you don't like my collection, you can just check the other one. Also the reason why I'm doing this is because I want you to have more options and ideas to build your own theme.
-
-Read this README with attention.
+<h2 align="center">Polybar Collection</h2>
+<div align="center">
+    <img src="https://github.com/Murzchnvok/polybar-collection/blob/master/screenshots/murz.png?raw=true" />
+</div>
 
 ## Getting Started
+> I'll add more themes based on what we had before with the new changes.
+
+> Also if you find any typos or I missed something let me know.
 
 ### Prerequisites
+> You need [polybar](https://github.com/polybar/polybar) installed.
 
-First of all, install Polybar:
-
-[Compiling Polybar](https://github.com/polybar/polybar/wiki/Compiling)
-
-By default the font used is `JetBrainsMono` (you can change it in the **fonts.ini** file), you can download and install from [NerdFonts](https://www.nerdfonts.com/font-downloads):
-
-Also you'll need [MaterialIcons](https://github.com/google/material-design-icons) and [Feather](https://feathericons.com/).
-You can move both **MaterialIcons** and **feather** inside **fonts** to **$HOME/.fonts/** and run:
+#### Clone repo
+> **--depth=1** shallow clone (basically smaller repo size).
 
 ```bash
-$HOME
--> fc-cache -fv
+git clone --depth=1 https://github.com/Murzchnvok/polybar-collection
 ```
 
-or just search how to install fonts!
+#### Use
+> You need to set some environment variable, in my case I'll set on `/etc/environment`.
+> The only one you actually need is **POLYBAR_COLLECTION** with the path to the _polybar-collection_.
 
-### Cloning
-
-Now you need to clone the repo in the \$HOME directory (because the path inside the files points to **$HOME/polybar-collection**):
+First open the file:
+> I use nvim, change to whatever you use.
 
 ```bash
-$HOME
--> git clone --depth 1 https://github.com/Murzchnvok/polybar-collection
+sudo nvim /etc/environment
 ```
 
-or clone to other directory and create a symlink of the folder in the \$HOME directory:
+Add environment variable:
+> The _path_ needs to be where you cloned the _polybar-collection_
 
 ```bash
-$HOME/Projects
--> git clone --depth 1 https://github.com/Murzchnvok/polybar-collection
-
-$HOME
--> ln -s $HOME/Projects/polybar-collection $HOME/polybar-collection
+POLYBAR_COLLECTION=/home/user/polybar-collection
 ```
 
-### Running
+Adicional variables are:
+> Only needed if you use:
+>> battery, wireless and wired modules
 
-BSPwm
+- POLYBAR_BATTERY_ADP
+- POLYBAR_BATTERY_BAT
+- POLYBAR_WIRELESS
+- POLYBAR_WIRED
+
+To get battery values:
+
+`ls -1 /sys/class/power_supply/`
+
+will return your battery adaptar and "name", so it can return:
 
 ```bash
-$HOME/polybar-collection/launch.sh
+ADP0
+BAT0
 ```
 
-I3wm
+`ADP0` goes to **POLYBAR_BATTERY_ADP** and `BAT0` goes to **POLYBAR_BATTERY_BAT**.
+
+To get network values:
+
+`ip addr`
+
+will return something like this:
 
 ```bash
-exec_always --no-startup-id $HOME/polybar-collection/launch.sh
+1: lo: ...
+
+2: wlp1s0: ...
+
+3: enp3s0f4u1: ...
 ```
 
-Remember to keep updated:
+`wlp1s0` goes to **POLYBAR_WIRELESS** and `enp3s0f4u1` goes to **POLYBAR_WIRED**.
+
+BSPWM
+> You probably already know this, but I feel like I need to add the instruction.
+
+Inside **.config/bspwm/bspwmrc** add the line.
+
+`$POLYBAR_COLLECTION/launch.sh &`
+
+### Customization
+
+#### Change theme and/or colorscheme
+
+Open `config.ini`, there's a comment for both colorscheme and theme.
+
+In the line below **; Colorscheme** you can change the _file.ini_ to whatever colorscheme is in the folder **colorscheme/**.
+
+`include-file = ${env:POLYBAR_COLLECTION}/colorscheme/file.ini`
+
+The same goes to the theme, just change the name after _themes/_ to whatever theme you have in the folder **themes/**
+
+#### Change font
+> By default is using **JetBrainsmono** font from [nerd fonts](https://www.nerdfonts.com/font-downloads).
+> I left a few comments like _icons normal size_, meaning this font is only used for icons, or _text normal_ meaning.. I know you already understood.
+
+Open `fonts.ini`, and change the fonts to whatever you like.
+
+### You might be interested
+> I had to update this thing, it was a mess, sometimes I wanted to use another theme but with my beloved gruvbox and I couldn't without changing a lot.
+
+> Other repos related to polybar themes.
+
+- [polybar-themes](https://github.com/adi1090x/polybar-themes) by adi1090x
+- [polybar-themes](https://github.com/prcxzm/polybar-themes) by prcxzm
+- [Polybar-Collection](https://github.com/Z-8Bit/Polybar-Collection) by Z-8Bit
+
+### Examples
+> Change goes in `config.ini` and `enabled-modules.ini`
+
+#### Murz
+
+![example of murz theme](screenshots/murz.png)
+> config.ini
 
 ```bash
-$HOME
--> cd $HOME/polybar-collection && git pull
+; Colorscheme
+include-file = ${env:POLYBAR_COLLECTION}/colorscheme/gruvbox.ini
+
+; Theme
+include-directory = ${env:POLYBAR_COLLECTION}/themes/murz
+
+[bar/main]
+background = ${colors.full-trans}
 ```
 
-## Few changes
-
-Now we only have one file **modules.ini** to change the modules that we like to use. I believe that's a better way to configure our Polybar themes:
-
-```ini
-modules-left = date wallz nft tor weather bspwm i3
-modules-center = mpd
-modules-right = wired cpu memory xbacklight pulseaudio
-```
-
-The only problem with this, is that some themes don't have certain modules, for now at least! I'm planning on making this collection easier to setup, so if you have any ideas you can always share.
-
-## Weather app
-
-As pointed out by Dennis Perrone, my personal OpenWeather API Key is in the project as a constant, and I did this intentionally so it just works, and it's fine if you want to use it the same as me, but I'll suggest you to create your own API Key for free in the official [OpenWeather](https://openweathermap.org/api) website. There's a limit of requests you can make using the same API Key, so we both could be without the weather info if a lot of requests are made.
-
-After you create your API Key, you can pass as an argument in the **weather.sh** script, or you can set an environment variable for **OPENWEATHER_API_KEY** with your own API Key:
-
-## Wallz
-
-Still thinking about this one, maybe I should add more 'backend' options, for now is only using Bing API, but I could add more options since Bing API have a 'limited', but with a really good quality, wallpapers collection. For now I'll be only using on minimal theme, but when I'm 'done' I'll add to the others.
-
-## You might be interested
-
-- [Rofi Collection](https://github.com/Murzchnvok/rofi-collection)
-- [Wallpaper Collection](https://drive.google.com/drive/folders/1o1qjRgkJtnF_8uGB1z6MRsQUjWinHUsw?usp=sharing)
-- [Pomotroid (pomodoro app)](https://github.com/Splode/pomotroid)
-- [Ugly To-Do](https://github.com/Murzchnvok/ugly-todo)
-
-_Enjoy!_
-
-### Murz
-
-![desktop](screenshots/murz/desktop.png)
-
-```ini
-modules-left = date weather round-right
-modules-center = round-left bspwm round-right
-modules-right = round-left mpd
-```
-
-### Chnvok
-
-![desktop](screenshots/chnvok/desktop.png)
-
-```ini
-modules-left = date weather mpd
-modules-center = bspwm
-modules-right = memory cpu xbacklight pulseaudio session
-```
-
-### Dracula
-
-![desktop](screenshots/dracula/desktop.png)
-
-```ini
-modules-left = date margin weather margin mpd
-modules-center = bspwm
-modules-right = memory margin cpu margin xbacklight margin pulseaudio margin battery margin session
-```
-
-### Gruvbox
-
-![desktop](screenshots/gruvbox/desktop.png)
-
-```ini
+> enabled-modules.ini
+```bash
 modules-left = bspwm
-modules-center = round-left-blue weather date round-right-blue margin round-left mpd round-right
-modules-right = cpu memory pulseaudio xbacklight
-```
-
-### Lofi
-
-![desktop](screenshots/lofi/desktop.png)
-
-```ini
-modules-left = bspwm
-modules-center = mpd
-modules-right = date weather
-```
-
-### Material
-
-![desktop](screenshots/material/desktop.png)
-
-```ini
-modules-left = weather margin date margin mpd tri-upper-right tri-lower-left bspwm tri-upper-right
-modules-center = 
-modules-right = memory margin cpu margin xbacklight margin pulseaudio
-```
-
-### Minimal
-
-![desktop](screenshots/minimal/desktop.png)
-
-```ini
-modules-left = date weather bspwm
-modules-center = mpd
-modules-right = cpu memory xbacklight pulseaudio
-```
-
-### Nord
-
-![desktop](screenshots/nord/desktop.png)
-
-```ini
-modules-left = date margin weather margin mpd round-right
-modules-center = trap-left bspwm trap-right
-modules-right = memory margin cpu margin xbacklight margin pulseaudio margin wallz margin session
-```
-
-### One Dark
-
-![desktop](screenshots/onedark/desktop.png)
-
-```ini
-modules-left = bspwm margin date margin weather margin mpd
-modules-center =
-modules-right = cpu margin memory margin pulseaudio margin xbacklight margin wallz margin session
+modules-center = border-round-left-blue weather date border-round-right-blue
+modules-right = cpu memory pulseaudio backlight battery tray
 ```
