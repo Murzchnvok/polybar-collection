@@ -121,6 +121,29 @@ Open `fonts.ini`, and change the fonts to whatever you like.
 ### Examples
 > Change goes in `config.ini` and `enabled-modules.ini`
 
+#### Hidrot
+
+![example of hidrot theme](screenshots/hidrot.png)
+> config.ini
+
+```bash
+; Colorscheme
+include-file = ${env:POLYBAR_COLLECTION}/colorscheme/nord.ini
+
+; Theme
+include-directory = ${env:POLYBAR_COLLECTION}/themes/hidrot
+
+[bar/main]
+background = ${colors.semi-trans}
+```
+
+> enabled-modules.ini
+```bash
+modules-left = weather margin date
+modules-center = border-round-left bspwm border-round-right
+modules-right = cpu margin memory margin pulseaudio margin backlight margin battery
+```
+
 #### Murz
 
 ![example of murz theme](screenshots/murz.png)
@@ -141,5 +164,5 @@ background = ${colors.full-trans}
 ```bash
 modules-left = bspwm
 modules-center = border-round-left-blue weather date border-round-right-blue
-modules-right = cpu memory pulseaudio backlight battery tray
+modules-right = cpu memory pulseaudio backlight battery
 ```
