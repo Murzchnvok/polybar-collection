@@ -83,7 +83,9 @@ will return something like this:
 To get weather API:
 > It's using my personal API by default, but please get your own ;)
 
-`https://www.weatherapi.com/`
+```bash
+https://www.weatherapi.com
+```
 
 go to this link, make an account, it's gonna give you an API key and it goes to **POLYBAR_WEATHER_API**.
 
