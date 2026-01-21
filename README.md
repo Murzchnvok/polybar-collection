@@ -39,12 +39,13 @@ POLYBAR_COLLECTION=/home/user/polybar-collection
 
 Adicional variables are:
 > Only needed if you use:
->> battery, wireless and wired modules
+>> battery, wireless, wired and weather modules
 
 - POLYBAR_BATTERY_ADP
 - POLYBAR_BATTERY_BAT
 - POLYBAR_WIRELESS
 - POLYBAR_WIRED
+- POLYBAR_WEATHER_API
 
 To get battery values:
 
@@ -78,6 +79,24 @@ will return something like this:
 ```
 
 `wlp1s0` goes to **POLYBAR_WIRELESS** and `enp3s0f4u1` goes to **POLYBAR_WIRED**.
+
+To get weather API:
+> It's using my personal API by default, but please get your own ;)
+
+`https://www.weatherapi.com/`
+
+go to this link, make an account, it's gonna give you an API key and it goes to **POLYBAR_WEATHER_API**.
+
+So your **/etc/environment** file would look something like this:
+
+```bash
+POLYBAR_COLLECTION=/home/murz/polybar-collection
+POLYBAR_BATTERY_ADP=ADP0
+POLYBAR_BATTERY_BAT=BAT0
+POLYBAR_WIRELESS=wlp1s0
+POLYBAR_WIRED=enp3s0f4u1
+POLYBAR_WEATHER_API=46276f91dcb44de4ac0134024262101
+```
 
 BSPWM
 > You probably already know this, but I feel like I need to add the instruction.
